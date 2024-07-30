@@ -1,0 +1,20 @@
+// Плагины
+@import '../../../node_modules/lightbox2/dist/css/lightbox.min';
+@import '../../../node_modules/select2/dist/css/select2.min';
+
+// Настройка
+@import './mixins/media'; // Mixin'ы для медиа запросов
+@import './mixins/scrollbar'; // Mixin'ы для медиа запросов
+@import './mixins/bg-cover'; // Mixin'ы для медиа запросов
+@import './utils/variables'; // Переменные
+@import './utils/global'; // Глобальные правила
+@import './components/fonts'; // Подключение шрифтов
+@import './components/tabs'; // Подключение табов
+@import './components/accordion'; // Подключение аккордиона
+
+@import './utils/pluginsOverload'; // Переписывание некоторых стилей плагинов. Изменение пути картинок и т.д.
+// Стили модалок
+
+@import './parts/modals';
+@import './parts/footer';
+@import './parts/header';

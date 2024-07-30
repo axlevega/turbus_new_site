@@ -1,0 +1,61 @@
+/* Переменные для медиа запросов */
+$mobileBreakpoint: 640px;
+$tabletBreakpoint: 900px;
+$smallDesktopBreakpoint: 1200px;
+$notebooksBreakpoint: 1600px;
+
+
+/* Ширина контента */
+:root {
+  --block-padding: 13.5vw;
+	--max-width: calc(100vw - 2 * 13.5vw);
+}
+@media screen and (max-width: $notebooksBreakpoint) {
+  :root {
+    --block-padding: 6vw;
+		--max-width: calc(100vw - 2 * 6vw);
+  }
+}
+@media screen and (max-width: $smallDesktopBreakpoint) {
+  :root {
+    --block-padding: 40px;
+		--max-width: calc(100vw - 2 * 40px);
+  }
+}
+@media screen and (max-width: $mobileBreakpoint) {
+  :root {
+    --block-padding: 20px;
+		--max-width: calc(100vw - 2 * 20px);
+  }
+}
+
+// Animation Time
+$fastAnim: .3s;
+$mediumAnim: .5s;
+$longAnim: .7s;
+
+// Animation timing function
+$animEase: cubic-bezier(0.5, 1, 0.89, 1);
+
+// Margin
+
+// Margin
+:root {
+  --section-margin: 12rem;
+  
+  @media screen and (max-width: $tabletBreakpoint) {
+    --section-margin: 6rem;
+  }
+  
+  @media screen and (max-width: $mobileBreakpoint) {
+    --section-margin: 4rem;
+  }
+}
+
+
+// Color - use CSS variables!
+:root {
+  --color-green: #35c811;
+  --color-blue: #305bf3;
+	//...
+}

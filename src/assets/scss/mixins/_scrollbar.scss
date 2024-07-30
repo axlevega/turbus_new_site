@@ -1,0 +1,46 @@
+@mixin scrollbar {
+  /* W3C standard
+		 сейчас только для Firefox */
+  & {
+    scrollbar-width: thin;
+    scrollbar-color: #0379BC #E2E2E2;
+  }
+
+  /* для Chrome/Edge/Safari */
+  &::-webkit-scrollbar {
+    height: 7px;
+    width: 7px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #E2E2E2;
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #0379BC;
+    border-radius: 5px;
+  }
+}
+
+
+@mixin scrollbar-gray {
+  /* W3C standard
+		 сейчас только для Firefox */
+  & {
+    scrollbar-width: thin;
+    scrollbar-color: var(--gray-color) var(--white-color);
+  }
+
+  /* для Chrome/Edge/Safari */
+  &::-webkit-scrollbar {
+    height: 7px;
+    width: 7px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--white-color);
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--gray-color);
+    border-radius: 5px;
+  }
+}

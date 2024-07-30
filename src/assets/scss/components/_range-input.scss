@@ -1,0 +1,104 @@
+
+// Input range
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 2px;
+  background: #f1f1f1;
+  border-radius: 2px;
+  background-image: linear-gradient(var(--primary-color), var(--primary-color));
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Input Thumb */
+@mixin thumbStyles {
+  -webkit-appearance: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: 5px solid var(--white-color);
+  background: var(--primary-color);
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: border-color $fastAnim $animEase, background-color $fastAnim $animEase;
+}
+@mixin thumbHover {
+  border-color: var(--darkPrimary-color);
+  background-color: var(--white-color);
+}
+input[type="range"]::-webkit-slider-thumb {
+  @include thumbStyles;
+}
+
+input[type="range"]::-moz-range-thumb {
+  @include thumbStyles;
+}
+
+input[type="range"]::-ms-thumb {
+  @include thumbStyles;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  @include thumbHover;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  @include thumbHover;
+}
+
+input[type="range"]::-ms-thumb:hover {
+  @include thumbHover;
+}
+
+/* Input Track */
+@mixin inputTrack {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  @include inputTrack;
+}
+
+input[type="range"]::-moz-range-track {
+  @include inputTrack;
+}
+
+input[type="range"]::-ms-track {
+  @include inputTrack;
+}
+
+.input-range {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &__input {
+    font: inherit;
+    border: none;
+    background: none;
+    margin-bottom: 1.2rem;
+  }
+
+  &__min {
+    margin-top: 1rem;
+  }
+
+  &__max {
+    margin-top: 1rem;
+  }
+  input {
+    width: 100%;
+    color: var(--primary-color);
+  }
+
+  @include smallDesktop {
+    font-size: 1.2rem;
+
+    &__input {
+      font-size: 1.4rem;
+    }
+  }
+}
