@@ -1,0 +1,126 @@
+.header {
+    background-color: var(--color-main-black);
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    >.content-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+    &__socials {
+        flex: 0 0 12%;
+    }
+    &__menu {
+        font-family: var(--font-headers);
+        text-transform: uppercase;
+        font-size: 20px;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        flex: auto;
+        &-list {
+            display: flex;
+            align-items: center;
+            flex: 0 0 calc(45% - 20px);
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 10px;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            a {
+                white-space: nowrap;
+                &:hover {
+                    opacity: .75;
+                }
+            }
+        }
+    }
+    &__logo {
+        flex: 0 0 10%;
+        width: 10%;
+        min-width: 100px;
+        a {
+            display: table;
+            margin: 0 auto;
+            img { 
+                width: 100%;
+                max-width: 66px;
+                height: 60px;
+                object-fit: contain;
+            }
+        }
+    }
+    &__phone {
+        flex: 0 0 12%;
+        .btn {
+            font-size: 18px;
+            margin: 0 0 0 auto;
+        }
+    }
+    &__burger {
+        display: none;
+    }
+
+    @include notebook {
+        &__socials {
+            flex: 0 0 10%;
+        }
+        &__menu {
+            font-size: 16px;
+            letter-spacing: .8px;
+            gap: 10px;
+        }
+        &__logo {
+            a {
+                img {
+                    max-width: 60px;
+                }
+            }
+        }
+        &__phone {
+            flex: 0 0 10%;
+            .btn {
+                font-size: 16px;
+                font-weight: 300;
+            }
+        }
+    }
+
+    @include smallDesktop {
+        &__socials,
+        &__phone {
+            display: none;
+        }
+        &__menu {
+            flex: 0 0 100%;
+            gap: 25px;
+        }
+    }
+
+    @include tablet {
+        &__socials {
+            display: block;
+            flex: 0 0 40%;
+        }
+        &__menu {
+            flex: 0 0 20%;
+            &-list {
+                display: none;
+            }
+        }
+        &__burger {
+            display: block;
+            flex: 0 0 40%;
+        }
+    }
+}

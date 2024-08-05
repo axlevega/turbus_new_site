@@ -1,9 +1,0 @@
-[data-tab_title] {
-  cursor: pointer;
-}
-
-[data-tab_container] {
-  height: 0px;
-  overflow: hidden;
-  transition: height $fastAnim $animEase;
-}

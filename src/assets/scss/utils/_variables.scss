@@ -8,7 +8,7 @@ $notebooksBreakpoint: 1600px;
 /* Ширина контента */
 :root {
   --block-padding: 13.5vw;
-	--max-width: calc(100vw - 2 * 13.5vw);
+	--max-width: calc(100vw - 2 * 6.25vw);
 }
 @media screen and (max-width: $notebooksBreakpoint) {
   :root {
@@ -53,9 +53,18 @@ $animEase: cubic-bezier(0.5, 1, 0.89, 1);
 }
 
 
-// Color - use CSS variables!
+
 :root {
-  --color-green: #35c811;
-  --color-blue: #305bf3;
-	//...
+
+  // colors
+  --color-main-black: #000000;
+  --color-main-blue: #1AA4B1;
+  --color-second: #D4D4D4;
+  --color-yellow: #FFC978;
+	
+
+  // fonts 
+  --font-headers: "PF Din Text Comp Pro", Arial, sans-serif;
+  --font-main: "Montserrat", Arial, sans-serif;
 }
+

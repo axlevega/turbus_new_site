@@ -9,8 +9,10 @@
 html {
   box-sizing: border-box;
   font-size: 10px;
+  font-weight: 300;
   overflow-x: hidden;
   max-width: 100vw;
+  font-family: var(--font-main);
 }
 
 body {
@@ -186,5 +188,62 @@ button {
 
   @include smallDesktop {
     font-size: 1.2rem;
+  }
+}
+
+
+// Socials 
+
+.socials {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    flex-wrap: nowrap;
+    padding: 0;
+    align-items: center;
+    gap: 14px;
+    li {
+      width: 24px;
+      height: 24px;
+      display: block;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      a {
+        display: table;
+        width: 100%;
+        height: 100%;
+      }
+      &:hover {
+        opacity: .85;
+      }
+    }
+    &-vk {background-image: url('../img/icons/ic_vk.svg');}
+    &-tg {background-image: url('../img/icons/ic_tg.svg');}
+    &-inst {background-image: url('../img/icons/ic_inst.svg');}
+  }
+}
+
+
+// Buttons {
+
+.btn {
+  display: flex;
+  white-space: nowrap;
+  font-family: var(--font-headers);
+  padding: 7px 25px;
+  border: 2px transparent solid;
+  transition: .2s;
+  align-items: center;
+  line-height: 1;
+  width: fit-content;
+  &__framed {
+    font-weight: 400;
+    border: 2px var(--color-main-blue) solid;
+    &:hover {
+      background-color: var(--color-main-blue);
+      color: var(--color-main-black);
+    }
   }
 }
