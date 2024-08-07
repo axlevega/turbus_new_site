@@ -223,6 +223,16 @@ button {
     &-tg {background-image: url('../img/icons/ic_tg.svg');}
     &-inst {background-image: url('../img/icons/ic_inst.svg');}
   }
+
+  @include mobile {
+    &__list {
+      gap: 5px;
+      li {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
 }
 
 
@@ -244,6 +254,30 @@ button {
     &:hover {
       background-color: var(--color-main-blue);
       color: var(--color-main-black);
+    }
+  }
+  &__burger {
+    display: flex;
+    width: 30px;
+    height: 27px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 0;
+    >div {
+      height: 2px;
+      border-radius: 2px;
+      background-color: var(--color-main-blue);
+      display: table;
+      &:nth-of-type(1) {width: 60%;}
+      &:nth-of-type(2) {width: 100%;}
+      &:nth-of-type(3) {width: 40%;}
+    }
+  }
+
+  @include mobile {
+    &__burger {
+      width: 23px;
+      height: 24px;
     }
   }
 }

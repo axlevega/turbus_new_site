@@ -69,6 +69,7 @@
     }
     &__burger {
         display: none;
+        justify-content: flex-end;
     }
 
     @include notebook {
@@ -110,17 +111,43 @@
     @include tablet {
         &__socials {
             display: block;
-            flex: 0 0 40%;
+            flex: 0 0 calc(40% - 20px);
         }
         &__menu {
-            flex: 0 0 20%;
+            flex: 0 0 calc(20% - 20px);
             &-list {
                 display: none;
             }
         }
         &__burger {
-            display: block;
-            flex: 0 0 40%;
+            display: flex;
+            flex: 0 0 calc(40% - 20px);
+        }
+    }
+
+    @include mobile {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        >.content-wrapper {
+            gap: 10px;
+        }
+        &__socials {
+            flex: 0 0 calc(30% - 10px);
+        }
+        &__menu {
+            flex: 0 0 calc(20% - 10px);
+        }
+        &__logo {
+            min-width: 30px;
+            a {
+                img {
+                    max-width: 30px;
+                    height: 27px;
+                }
+            }
+        }
+        &__burger {
+            flex: 0 0 calc(30% - 10px);
         }
     }
 }
