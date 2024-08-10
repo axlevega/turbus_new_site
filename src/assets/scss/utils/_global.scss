@@ -143,8 +143,37 @@ button {
   }
 }
 
-// Breadcrumbs
+// Headers
+h1, .h1 {
+  font-family: var(--font-headers);
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+}
 
+h2, .h2 {
+  font-family: var(--font-headers);
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+  letter-spacing: 1px;
+
+  @include mobile {
+    font-size: 30px;
+  }
+
+  @media (max-width: 414px) {
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+
+// Breadcrumbs
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
@@ -191,9 +220,7 @@ button {
   }
 }
 
-
 // Socials 
-
 .socials {
   &__list {
     display: flex;
@@ -235,25 +262,34 @@ button {
   }
 }
 
-
 // Buttons {
-
 .btn {
   display: flex;
   white-space: nowrap;
   font-family: var(--font-headers);
-  padding: 7px 25px;
+  padding: 7px 25px 4px 25px;
   border: 2px transparent solid;
   transition: .2s;
   align-items: center;
   line-height: 1;
   width: fit-content;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 29px;
   &__framed {
     font-weight: 400;
-    border: 2px var(--color-main-blue) solid;
+    border-color: var(--color-main-blue);
     &:hover {
       background-color: var(--color-main-blue);
       color: var(--color-main-black);
+    }
+  }
+  &__filled {
+    border-color: var(--color-main-blue);
+    background-color: var(--color-main-blue);
+    color: white;
+    &:hover {
+      filter: brightness(0.9);
     }
   }
   &__burger {
@@ -275,9 +311,14 @@ button {
   }
 
   @include mobile {
+    font-size: 18px;
     &__burger {
       width: 23px;
       height: 24px;
     }
+  }
+
+  @media (max-width: 414px) {
+    font-size: 14px;
   }
 }

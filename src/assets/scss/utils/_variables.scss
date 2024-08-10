@@ -66,5 +66,12 @@ $animEase: cubic-bezier(0.5, 1, 0.89, 1);
   // fonts 
   --font-headers: "PF Din Text Comp Pro", Arial, sans-serif;
   --font-main: "Montserrat", Arial, sans-serif;
+
+  // header
+  --header-height: 90px;
+
+  @media screen and (max-width: $mobileBreakpoint) {
+    --header-height: 46px;
+  }
 }
 

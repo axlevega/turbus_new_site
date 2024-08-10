@@ -1,0 +1,285 @@
+.mainscreen {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - var(--header-height));
+    max-height: 1012px;
+    position: relative;
+    >.content-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        padding-top: 70px;
+        padding-bottom: 45px;
+        align-items: center;
+        position: relative;
+        z-index: 20;
+    }
+    &_text {
+        color: white;
+        h1, .h1 {
+            text-align: center;
+            margin: 0 auto 13px auto;
+            font-size: 72px;
+            line-height: 1;
+            letter-spacing: 1.5px;
+        }
+    }
+    &_description {
+        font-size: 25px;
+        text-transform: uppercase;
+        font-family: var(--font-headers);
+        text-align: center;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        p {
+            margin: 0 auto;
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+    }
+    &_buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 27px;
+        justify-content: center;
+    }
+    &_toggler {
+        height: 50px;
+        width: 100%;
+        display: block;
+    }
+    &:after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 40%;
+        display: block;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 10%, rgba(0, 0, 0, 0) 100%);
+        z-index: 10;
+    }
+
+    @include tablet {
+        &_text {
+            h1, .h1 {
+                font-size: 56px;
+            }
+        }
+        &_description {
+            font-size: 20px;
+        }
+    }
+
+    @include mobile {
+        max-height: 600px;
+        &_text {
+            h1, .h1 {
+                font-size: 42px;
+                margin-bottom: 20px;
+            }
+        }
+        &_description {
+            font-size: 18px;
+            p {
+                line-height: 1.1;
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    @media (max-width: 414px) {
+        max-height: 505px;
+        >.content-wrapper {
+            padding-top: 53px;
+        }
+        &_text {
+            h1, .h1 {
+                font-size: 24px;
+                letter-spacing: 0.5px;
+                margin-bottom: 4px;
+            }
+        }
+        &_description {
+            font-size: 12px;
+        }
+    }
+}
+
+.bullets {
+    padding-top: 92px;
+    padding-bottom: 100px;
+    h2, .h2 {
+        text-align: center;
+        display: table;
+        margin: 0 auto 81px auto;
+    }
+    &_textblock {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 60px;
+        align-items: flex-start;
+        width: 100%;
+        margin-bottom: 93px;
+    }
+    &_text {
+        flex: 0 0 35%;
+        position: relative;
+        padding-left: 50px;
+        font-size: 18px;
+        &_caption {
+            font-family: var(--font-headers);
+            font-size: 30px;
+            text-transform: uppercase;
+            font-weight: 300;
+            letter-spacing: 0.6px;
+            margin-bottom: 7px;
+        }
+        &_icon {
+            width: 32px;
+            height: 32px;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    &_list {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        max-width: 1396px;
+        margin: 0 auto;
+        gap: 50px;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &_item {
+        border-left: 4px solid var(--color-main-blue);
+        padding-left: 40px;
+        &_caption {
+            font-size: 72px;
+            font-family: var(--font-headers);
+            line-height: 1;
+            white-space: nowrap;
+        }
+        &_text {
+            font-size: 18px;
+            line-height: 1;
+        }
+        &:nth-child(1) {order: 1;}
+        &:nth-child(2) {order: 2;}
+        &:nth-child(3) {order: 3;}
+        &:nth-child(4) {order: 4;}
+    }
+
+    @include smallDesktop {
+        padding-top: 75px;
+        padding-bottom: 75px;
+        h2, .h2 {
+            margin-bottom: 50px;
+        }
+        &_text {
+            flex: 0 0 45%;
+            font-size: 16px;
+            &_caption {
+                font-size: 26px;
+            }
+        }
+        &_item {
+            padding-left: 25px;
+            &_caption {
+                font-size: 60px;
+            }
+            &_text {
+                font-size: 16px;
+            }
+        }
+    }
+
+    @include tablet {
+        &_textblock {
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        &_text {
+            flex: 0 0 100%;
+        }
+        &_list {
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        &_item {
+            flex: 0 0 calc(50% - 30px);
+            &:nth-child(2) {
+                order: 3;
+            }
+            &:nth-child(3) {
+                order: 2;
+            }
+        }
+    }
+
+    @include mobile {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        h2, .h2 {
+            margin-bottom: 35px;
+        }
+        &_textblock {
+            margin-bottom: 50px;
+        }
+        &_text {
+            font-size: 14px;
+            padding-left: 40px;
+            &_caption {
+                font-size: 20px;
+            }
+            &_icon {
+                width: 26px;
+                height: 26px;
+            }
+        }
+        &_item {
+            &_caption {
+                font-size: 46px;
+            }
+            &_text {
+                font-size: 14px;
+            }
+        }
+    }
+
+    @media (max-width: 414px) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        &_textblock {
+            margin-bottom: 35px;
+        }
+        &_text {
+            font-size: 10px;
+        }
+        &_list {
+            gap: 20px;
+        }
+        &_item {
+            flex: 0 0 calc(50% - 20px);
+            padding-left: 15px;
+            border-width: 3px;
+            &_caption {
+                font-size: 36px;
+            }
+            &_text {
+                font-size: 10px;
+            }
+        }
+    }
+}
