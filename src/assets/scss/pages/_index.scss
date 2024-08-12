@@ -291,7 +291,7 @@
     >.content-wrapper {
         display: flex;
         flex-wrap: nowrap;
-        gap: 30px;
+        gap: 66px;
         max-width: calc(100vw - 2 * 14.05vw);
     }
     h2, .h2 {
@@ -307,6 +307,7 @@
     }
     &_right {
         flex: 0 0 100%;
+        max-width: 1300px;
     }
     &_togglers {
         display: flex;
@@ -342,5 +343,55 @@
     &_text {
         font-size: 18px;
         flex: 100%;
+    }
+    &_carousel {
+        .swiper {
+            padding-bottom: 80px;
+            &-scrollbar {
+                position: relative;
+                left: 0;
+                bottom: -80px;
+                &-drag {
+                    background: var(--color-main-blue);
+                    border-radius: 0;
+                }
+            }
+        }
+    }
+    &_slide {
+        a {
+            height: 468px;
+            width: 100%;
+            max-width: 334px;
+            overflow: hidden;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            p {
+                font-family: var(--font-headers);
+                font-size: 30px;
+                color: white;
+                text-align: center;
+                margin: 0 auto;
+                text-transform: uppercase;
+                padding: 20px 30px;
+                width: 100%;
+                position: relative;
+                z-index: 10;
+            }
+            &:after {
+                position: absolute;
+                content: '';
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 160px;
+                background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                display: block;
+            }
+        }
     }
 }

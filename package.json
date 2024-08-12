@@ -53,6 +53,7 @@
     "lightbox2": "^2.11.3",
     "normalize.css": "^8.0.1",
     "select2": "^4.1.0-rc.0",
+    "swiper": "^11.1.9",
     "validator": "^13.7.0"
   }
 }

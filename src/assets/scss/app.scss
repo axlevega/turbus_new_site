@@ -1,6 +1,10 @@
 // Плагины
-@import '../../../node_modules/lightbox2/dist/css/lightbox.min';
-@import '../../../node_modules/select2/dist/css/select2.min';
+// @import '../../../node_modules/lightbox2/dist/css/lightbox.min';
+// @import '../../../node_modules/select2/dist/css/select2.min';
+@import '../../../node_modules/swiper/swiper.scss';
+@import '../../../node_modules/swiper/modules/scrollbar.scss';
+@import '../../../node_modules/swiper/modules/navigation.scss';
+@import '../../../node_modules/swiper/modules/pagination.scss';
 
 // Настройка
 @import './components/fonts';
