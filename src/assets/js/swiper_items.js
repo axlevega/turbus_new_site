@@ -12,4 +12,25 @@ const swiper_directs_carousel = new Swiper('.directs_carousel .swiper', {
     scrollbar: {
       el: '.swiper-scrollbar',
     },
+    breakpoints: {
+      300: {
+        slidesPerView: 2.6,
+        spaceBetween: 10
+      },
+      420: {
+        slidesPerView: 2.8,
+        spaceBetween: 10
+      },
+      640: {
+        slidesPerView: 3.2,
+        spaceBetween: 20
+      },
+      760: {
+        slidesPerView: 4.5,
+        spaceBetween: 20
+      },
+      1020: {
+        slidesPerView: 3.7,
+      }
+    }
   });

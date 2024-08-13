@@ -260,12 +260,24 @@
 
     @media (max-width: 414px) {
         padding-top: 30px;
-        padding-bottom: 30px;
+        padding-bottom: 40px;
+        h2, .h2 {
+            margin-bottom: 25px;
+        }
         &_textblock {
             margin-bottom: 35px;
         }
         &_text {
             font-size: 10px;
+            padding-left: 25px;
+            &_icon {
+                width: 16px;
+                height: 16px;
+            }
+            &_caption {
+                font-size: 14px;
+                margin-bottom: 4px;
+            }
         }
         &_list {
             gap: 20px;
@@ -312,6 +324,7 @@
     &_togglers {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
         gap: 10px;
     }
     &_toggle {
@@ -399,4 +412,75 @@
             }
         }
     }
+
+    @include notebook {
+        >.content-wrapper {
+            max-width: var(--max-width);
+        }
+    }
+
+    @include smallDesktop {
+        >.content-wrapper {
+            flex-wrap: wrap;
+        }
+        &_left {
+            flex: 0 0 100%;
+            max-width: none;
+        }
+        &_right {
+            flex: 0 0 100%;
+            max-width: 120vw;
+        }
+    }
+
+    @media (max-width: 414px) {
+        padding-top: 28px;
+        padding-bottom: 32px;
+        >.content-wrapper {
+            gap: 30px;
+        }
+        h2, .h2 {
+            width: 80%;
+        }
+        &_left {
+            gap: 12px;
+        }
+        &_right {
+            max-width: 116vw;
+        }
+        &_togglers {
+            gap: 5px;
+        }
+        &_toggle {
+            font-size: 9px;
+            padding-left: 13px;
+            &:before {
+                width: 12px;
+                height: 12px;
+            }
+        }
+        &_text {
+            font-size: 9px;
+        }
+        &_slide {
+            a {
+                width: 138px;
+                height: 189px;
+                p {
+                    padding: 12px 15px;
+                    font-size: 14px;
+                }
+            }
+        }
+        &_carousel {
+            .swiper {
+                padding-bottom: 20px;
+                &-scrollbar {
+                    bottom: -20px;
+                    height: 2px;
+                }
+            }
+        }
+    }
+
 }
