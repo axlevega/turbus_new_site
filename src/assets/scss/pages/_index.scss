@@ -321,6 +321,7 @@
         position: relative;
         padding-left: 26px;
         display: block;
+        cursor: pointer;
         &:before {
             position: absolute;
             content: '';
@@ -345,6 +346,10 @@
         flex: 100%;
     }
     &_carousel {
+        display: none;
+        &.is-active {
+            display: block;
+        }
         .swiper {
             padding-bottom: 80px;
             &-scrollbar {

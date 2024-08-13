@@ -65,3 +65,29 @@ $(".go_to_top").on("click", function () {
     behavior: "smooth",
   });
 });
+
+////////////////////////////////////
+/////// Табы ///////////////////////
+
+$('[data-tab_target').on('click', function() {
+  closeAllTabs();
+  showTab($(this).data('tab_target'));
+})
+
+// Закрытие всех табов
+function closeAllTabs() {
+  $('[data-tab_item], [data-tab_target]').each(function() {
+    $(this).removeClass('is-active');
+  })
+}
+
+// Открытие одного таба
+function showTab(tab_elem_id) {
+  if ($('#'+tab_elem_id).length) {
+    $('[data-tab_target=' + tab_elem_id).addClass('is-active');
+    $('#' + tab_elem_id).addClass('is-active');
+  }
+}
+
+////////////////////////////////////
+////////////////////////////////////
