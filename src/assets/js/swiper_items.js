@@ -18,7 +18,7 @@ const swiper_directs_carousel = new Swiper('.directs_carousel .swiper', {
         spaceBetween: 10
       },
       420: {
-        slidesPerView: 2.8,
+        slidesPerView: 2.7,
         spaceBetween: 10
       },
       640: {
@@ -26,10 +26,13 @@ const swiper_directs_carousel = new Swiper('.directs_carousel .swiper', {
         spaceBetween: 20
       },
       760: {
-        slidesPerView: 4.5,
+        slidesPerView: 3.6,
         spaceBetween: 20
       },
       1020: {
+        slidesPerView: 4.2,
+      },
+      1200: {
         slidesPerView: 3.7,
       }
     }

@@ -431,6 +431,56 @@
             flex: 0 0 100%;
             max-width: 120vw;
         }
+        &_slide {
+            a {
+                width: 290px;
+                height: 380px;
+            }
+        }
+        &_carousel {
+            .swiper {
+                padding-bottom: 50px;
+                &-scrollbar {
+                    bottom: -50px;
+                }
+            }
+        }
+    }
+
+    @include tablet {
+        &_slide {
+            a {
+                width: 250px;
+                height: 320px;
+            }
+        }
+        &_carousel {
+            .swiper {
+                padding-bottom: 40px;
+                &-scrollbar {
+                    bottom: -40px;
+                    height: 3px;
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        &_slide {
+            a {
+                width: 180px;
+                height: 250px;
+            }
+        }
+        &_carousel {
+            .swiper {
+                padding-bottom: 30px;
+                &-scrollbar {
+                    bottom: -30px;
+                    height: 3px;
+                }
+            }
+        }
     }
 
     @media (max-width: 414px) {
