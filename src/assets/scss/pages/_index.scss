@@ -934,3 +934,46 @@
         }
     }
 }
+
+.personalbullets {
+    padding-top: 59px;
+    padding-bottom: 90px;
+    h2, .h2 {
+        text-align: center;
+        display: table;
+        margin: 0 auto 67px auto;
+        line-height: 1;
+    }
+    &_wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    &_item {
+        flex: 0 0 calc(25% - 15px);
+        width: calc(25% - 15px);
+        max-width: calc(25% - 15px);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: flex-start;
+        align-items: center;
+        &_icon {
+            width: 90px;
+            height: 80px;
+        }
+        &_title {
+            text-transform: uppercase;
+            width: 100%;
+            font-size: 30px;
+            font-family: var(--font-headers);
+        }
+        &_description {
+            width: 100%;
+            font-size: 18px;
+            padding-left: 7px;
+        }
+    }
+}
