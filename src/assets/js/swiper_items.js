@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 import Swiper from 'swiper';
-import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, Grid } from 'swiper/modules';
 
 // Карусель из направлений туров
 const swiper_directs_carousel = new Swiper('.directs_carousel .swiper', {
@@ -37,3 +37,18 @@ const swiper_directs_carousel = new Swiper('.directs_carousel .swiper', {
       }
     }
   });
+
+
+// Карусель для галерей
+const swiper_gallery_carousel = new Swiper('.gallery_wrapper .swiper', {
+  slidesPerView: "auto",
+  modules: [Grid],
+  
+  centeredSlides: true,
+  centeredSlidesBounds: true,
+  grid: {
+    fill: 'row',
+    rows: 2,
+  },
+  spaceBetween: 30,
+});
