@@ -963,6 +963,9 @@
         &_icon {
             width: 90px;
             height: 80px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
         &_title {
             text-transform: uppercase;
@@ -974,6 +977,66 @@
             width: 100%;
             font-size: 18px;
             padding-left: 7px;
+        }
+    }
+
+    @include smallDesktop {
+        &_wrapper {
+            gap: 35px;
+        }
+        &_item {
+            flex: 0 0 calc(25% - 30px);
+            width: calc(25% - 30px);
+            max-width: calc(25% - 30px);
+            align-items: flex-start;
+            &_icon {
+                width: 70px;
+                height: 55px;
+            }
+            &_title {
+                font-size: 20px;
+            }
+            &_description {
+                padding: 0;
+                font-size: 14px;
+            }
+        }
+    }
+
+    @include tablet {
+        &_wrapper {
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        &_item {
+            flex: 0 0 calc(50% - 15px);
+            width: calc(50% - 15px);
+            max-width: calc(50% - 15px);
+        }
+    }
+
+    @include mobile {
+        padding-top: 10px;
+        padding-bottom: 50px;
+        h2, .h2 {
+            margin: 0 auto 27px auto;
+        }
+        &_wrapper {
+            gap: 10px;
+        }
+        &_item {
+            gap: 5px;
+            &_icon {
+                width: 45px;
+                height: 40px;
+            }
+            &_title {
+                font-size: 16px;
+                line-height: 1;
+            }
+            &_description {
+                font-size: 9px;
+            }
         }
     }
 }
