@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 import Swiper from 'swiper';
-import { Navigation, Pagination, Scrollbar, Grid } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, Grid, EffectCreative } from 'swiper/modules';
 
 // Карусель из направлений туров
 const swiper_directs_carousel = new Swiper('.directs_carousel .swiper', {
@@ -51,4 +51,24 @@ const swiper_gallery_carousel = new Swiper('.gallery_wrapper .swiper', {
     rows: 2,
   },
   spaceBetween: 30,
+});
+
+
+// Карусель с отзывами
+const swiper_reviews_carousel = new Swiper('.reviews_carousel .swiper', {
+  slidesPerView: 1,
+  modules: [Navigation, EffectCreative],
+  effect: "creative",
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  creativeEffect: {
+    prev: {
+      translate: [0, 0, -400],
+    },
+    next: {
+      translate: ["100%", 0, 0],
+    },
+  },
 });
