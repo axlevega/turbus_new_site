@@ -70,5 +70,5 @@ const swiper_reviews_carousel = new Swiper('.reviews_carousel .swiper', {
     next: {
       translate: ["100%", 0, 0],
     },
-  },
+  }
 });

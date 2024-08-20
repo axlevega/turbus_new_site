@@ -1135,4 +1135,72 @@
             }
         }
     }
+
+    @include smallDesktop {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        h2, .h2 {
+            top: 0;
+        }
+        &_item {
+            padding: 0;
+            &_text {
+                font-size: 14px;
+                width: 100%;
+            }
+            &_left {
+                padding-top: 60px;
+            }
+            &_name {
+                font-size: 20px;
+            }
+            &_header {
+                gap: 10px;
+                justify-content: space-between;
+            }
+            &_rating {
+                gap: 4px;
+                > div {
+                    width: 19px;
+                    height: 17px;
+                }
+            }
+            &_buttons {
+                .btn {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    @include tablet {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        &_carousel {
+            &_navigation {
+                &_wrapper {
+                    width: 100%;
+                }
+            }
+        }
+        &_item {
+            flex-wrap: wrap;
+            padding-left: 0;
+            &_left,
+            &_right {
+                flex: 0 0 100%;
+                width: 100%;
+                max-width: 100%;
+            }
+            &_header {
+                justify-content: flex-start;
+            }
+            &_buttons {
+                .btn {
+                    font-size: 18px;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
 }
