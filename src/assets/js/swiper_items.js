@@ -72,3 +72,40 @@ const swiper_reviews_carousel = new Swiper('.reviews_carousel .swiper', {
     },
   }
 });
+
+// Карусель с ценностями
+const swiper_values_carousel = new Swiper('.values_carousel .swiper', {
+  slidesPerView: 2,
+  modules: [Grid],
+  spaceBetween: 30,
+  grid: {
+    fill: 'row',
+    rows: 2,
+  },
+  breakpoints: {
+    300: {
+      slidesPerView: 1.3,
+      spaceBetween: 10,
+      grid: {
+        rows: 1,
+      },
+    },
+    900: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      grid: {
+        rows: 2,
+      },
+    }
+  }
+});
+
+if (window.outerWidth > 900) {
+  const values_elems = document.querySelectorAll('.values_carousel .values_item');
+  const half_values_elems = Math.ceil(values_elems.length / 2);
+  
+  for (let i = half_values_elems; i < values_elems.length; i++) {
+    values_elems[i].querySelector('.values_item_photo').style.order = '2';
+    values_elems[i].querySelector('.values_item_text').style.order = '1';
+  }
+}
