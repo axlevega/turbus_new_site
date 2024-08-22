@@ -109,3 +109,22 @@ if (window.outerWidth > 900) {
     values_elems[i].querySelector('.values_item_text').style.order = '1';
   }
 }
+
+// Карусель с командой
+const swiper_team_carousel = new Swiper('.team_carousel .swiper', {
+  slidesPerView: 1,
+  modules: [Navigation],
+  spaceBetween: 20,
+  navigation: {
+    nextEl: '.team_carousel .swiper-button-next',
+    prevEl: '.team_carousel .swiper-button-prev',
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 2
+    },
+    900: {
+      slidesPerView: 3
+    },
+  }
+});
