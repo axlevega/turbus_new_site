@@ -1660,3 +1660,94 @@
         }
     }
 }
+
+.ext_links {
+    &_list {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        height: 145px;
+    }
+
+    &_item {
+        display: flex;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 52px;
+        display: flex;
+        flex: 0 0 20%;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        &-inst {
+            background-image: url('../img/icons/ic_ext_inst.svg');
+            background-color: #544FD7;
+        }
+        &-tg {
+            background-image: url('../img/icons/ic_ext_tg.svg');
+            background-color: #0087CA;
+        }
+        &-vk {
+            background-image: url('../img/icons/ic_ext_vk.svg');
+            background-color: #45729C;
+        }
+        &-wa {
+            background-image: url('../img/icons/ic_ext_wa.svg');
+            background-color: #1AA4B1;
+        }
+        &-yt {
+            background-image: url('../img/icons/ic_ext_yt.svg');
+            background-color: #E91E17;
+        }
+        &:hover {
+            filter: brightness(0.95);
+        }
+    }
+
+    @include notebook {
+        &_list {
+            height: 100px;
+        }
+        &_item {
+            background-size: 42px;
+        }
+    }
+    @include smallDesktop {
+        &_list {
+            height: 80px;
+        }
+        &_item {
+            background-size: 32px;
+        }
+    }
+    @include tablet {
+        &_list {
+            height: 60px;
+        }
+        &_item {
+            background-size: 26px;
+        }
+    }
+    @include mobile {
+        &_list {
+            height: 50px;
+        }
+        &_item {
+            background-size: 24px;
+        }
+    }
+    @media (max-width: 420px) {
+        &_list {
+            height: 45px;
+        }
+        &_item {
+            flex: 0 0 25%;
+            background-size: 20px;
+            &-yt {display: none;}
+        }
+    }
+}
