@@ -3,6 +3,7 @@ import './utils.js'; // Дополнительная логика (Модалк�
 import { Fancybox } from '@fancyapps/ui';
 
 import './swiper_items.js';
+import './ya_maps.js';
 
 window.jQuery = $;
 window.$ = $;
