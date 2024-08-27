@@ -354,3 +354,29 @@ h2, .h2 {
     }
   }
 }
+
+
+// Media important
+.show-for-small-desktop {
+  @media (max-width: $smallDesktopBreakpoint) {
+    display: none !important;
+  }
+}
+
+.show-for-tablet {
+  @media (max-width: $tabletBreakpoint) {
+    display: none !important;
+  }
+}
+
+.hide-for-small-desktop {
+  @media (min-width: $smallDesktopBreakpoint) {
+    display: none !important;
+  }
+}
+
+.hide-for-tablet {
+  @media (min-width: $tabletBreakpoint) {
+    display: none !important;
+  }
+}

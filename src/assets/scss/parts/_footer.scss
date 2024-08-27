@@ -28,9 +28,10 @@
         gap: 20px;
         &_column {
             flex: 0 0 calc(33% - 20px);
-            &:last-of-type {
-                display: none;
-            }
+            // flex: auto;
+            // &:last-of-type {
+            //     display: none;
+            // }
         }
         &_links,
         &_contacts {
@@ -103,6 +104,153 @@
     }
 
     @include smallDesktop {
-        
+        >.content-wrapper {
+            gap: 40px;
+        }
+        &_navigation {
+            gap: 30px;
+            flex-wrap: wrap;
+            &_title {
+                font-size: 20px;
+            }
+            &_column {
+                flex: auto;
+                min-width: 33%;
+            }
+            &_links,
+            &_contacts {
+                font-size: 14px;
+            }
+        }
+    }
+
+    @include tablet {
+        padding-top: 40px;
+        gap: 0;
+        >.content-wrapper {
+            gap: 40px;
+        }
+        &_logo {
+            img {
+                max-width: 60px;
+            }
+            a {
+                max-width: 120px;
+                font-size: 12px;
+            }
+        }
+        &_navigation {
+            flex-wrap: wrap;
+            gap: 35px 15px;
+            &_column {
+                flex: 0 0 calc(50% - 12px);
+                max-width: calc(50% - 12px);
+                width: calc(50% - 12px);
+            }
+            .btn {
+                font-size: 19px;
+                padding: 7px 15px 6px 15px;
+            }
+        }
+        &_socials {
+            &_list {
+                height: 36px;
+                justify-content: flex-start;
+                gap: 15px;
+            }
+            &_item {
+                background-size: 36px;
+                flex: 0 0 36px;
+            }
+        }
+    }
+
+    @include mobile {
+        padding-top: 20px;
+        >.content-wrapper {
+            gap: 30px;
+        }
+        &_logo {
+            gap: 6px;
+            img {
+                max-width: 50px;
+            }
+            a {
+                max-width: 110px;
+                font-size: 10px;
+            }
+        }
+        &_navigation {
+            padding-top: 9px;
+            gap: 28px 10px;
+            &_column {
+                flex: 0 0 calc(50% - 7px);
+                max-width: calc(50% - 7px);
+                width: calc(50% - 7px);
+            }
+            &_links,
+            &_contacts {
+                font-size: 12px;
+                gap: 3px;
+            }
+
+            &_title {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+            .btn {
+                font-size: 15px;
+                padding: 7px 13px 4px 13px;
+                border-width: 1px;
+                font-weight: 300;
+                letter-spacing: 0.5px;
+            }
+        }
+        &_socials {
+            margin-bottom: 15px;
+            &_list {
+                height: 30px;
+                gap: 12px;
+            }
+            &_item {
+                background-size: 30px;
+                flex: 0 0 30px;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        &_logo {
+            img {
+                max-width: 29px;
+            }
+            a {
+                max-width: 60px;
+                font-size: 7px;
+            }
+        }
+        &_navigation {
+            &_links,
+            &_contacts {
+                font-size: 8px;
+                gap: 0px;
+            }
+            &_title {
+                font-size: 14px;
+            }
+            .btn {
+                font-size: 10px;
+                padding: 7px 11px 4px 11px;
+            }
+        }
+        &_socials {
+            &_list {
+                height: 20px;
+            }
+            &_item {
+                background-size: 20px;
+                flex: 0 0 20px;
+            }
+        }
     }
 }
