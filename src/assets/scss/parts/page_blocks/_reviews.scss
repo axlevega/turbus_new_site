@@ -1,0 +1,163 @@
+.reviews {
+    padding-top: 90px;
+    padding-bottom: 60px;
+    background-color: var(--color-light-gray);
+    >.content-wrapper {
+        position: relative;
+    }
+    h2, .h2 {
+        position: absolute;
+        top: 36px;
+        left: 0;
+        z-index: 100;
+    }
+    &_carousel {
+        &_navigation {
+            position: relative;
+            width: 90px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            
+            .swiper-button-prev,
+            .swiper-button-next {
+                position: relative;
+                top: initial;
+                left: initial;
+                right: initial;
+                bottom: initial;
+                margin: 0;
+            }
+            &_wrapper {
+                position: relative;
+                width: 58%;
+                margin: 25px 0 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    &_item {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 30px;
+        justify-content: space-between;
+        background-color: var(--color-light-gray);
+        padding-left: 10px;
+        &_left {
+            flex: 0 0 calc(41% - 20px);
+            width: calc(41% - 20px);
+            max-width: calc(41% - 20px);
+            padding-top: 140px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        &_right {
+            flex: 0 0 calc(59% - 20px);
+            width: calc(59% - 20px);
+            max-width: calc(59% - 20px);
+        }
+        &_header {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        &_name {
+            text-transform: uppercase;
+            color: var(--color-main-blue);
+            font-size: 30px;
+            font-family: var(--font-headers);
+            letter-spacing: 0.7px;
+            line-height: 1;
+        }
+        &_text {
+            font-size: 18px;
+            width: 85%;
+            flex: auto;
+        }
+        &_rating {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 8px;
+            align-items: center;
+            > div {
+                width: 24px;
+                height: 23px;
+                display: block;
+                background: url('../img/icons/ic_rating_star.svg') no-repeat center;
+                background-size: contain;
+            }
+        }
+    }
+
+    @include smallDesktop {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        h2, .h2 {
+            top: 0;
+        }
+        &_item {
+            padding: 0;
+            &_text {
+                font-size: 14px;
+                width: 100%;
+            }
+            &_left {
+                padding-top: 60px;
+            }
+            &_name {
+                font-size: 20px;
+            }
+            &_header {
+                gap: 10px;
+                justify-content: space-between;
+            }
+            &_rating {
+                gap: 4px;
+                > div {
+                    width: 19px;
+                    height: 17px;
+                }
+            }
+            &_buttons {
+                .btn {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    @include tablet {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        &_carousel {
+            &_navigation {
+                &_wrapper {
+                    width: 100%;
+                }
+            }
+        }
+        &_item {
+            flex-wrap: wrap;
+            padding-left: 0;
+            &_left,
+            &_right {
+                flex: 0 0 100%;
+                width: 100%;
+                max-width: 100%;
+            }
+            &_header {
+                justify-content: flex-start;
+            }
+            &_buttons {
+                .btn {
+                    font-size: 18px;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}

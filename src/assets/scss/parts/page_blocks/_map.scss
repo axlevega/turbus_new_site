@@ -1,0 +1,38 @@
+.map {
+    .yamap {
+        height: 630px;
+        width: 100%;
+        .ymaps3x0--marker {
+            width: 27px;
+        }
+        .icon-marker {
+            width: 27px;
+            height: 32px;
+            position: relative;
+            display: table;
+            z-index: 1000;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    @include notebook {
+        .yamap {
+            height: 450px;
+        }
+    }
+    @include smallDesktop {
+        .yamap {
+            height: 400px;
+        }
+    }
+    @include mobile {
+        .yamap {
+            height: 280px;
+        }
+    }
+    @media (max-width: 480px) {
+        .yamap {
+            height: 50vh;
+        }
+    }
+}

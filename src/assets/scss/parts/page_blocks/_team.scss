@@ -1,0 +1,170 @@
+.team {
+    padding-top: 80px;
+    padding-bottom: 90px;
+    h2, .h2 {
+        text-align: center;
+        display: table;
+        margin: 0 auto 36px auto;
+        line-height: 1;
+    }
+    &_carousel {
+        position: relative;
+        .swiper {
+            max-width: calc(100vw - 2* 11.4vw);
+            &-button {
+                &-prev {
+                    left: 45px;
+                }
+                &-next {
+                    right: 45px;
+                }
+            }
+        }
+    }
+    &_item {
+        &_photo {
+            margin-bottom: 18px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &_name {
+            font-size: 30px;
+            text-transform: uppercase;
+            font-family: var(--font-headers);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        &_description {
+            text-align: center;
+            font-size: 18px;
+        }
+    }
+
+    @include notebook {
+        padding-top: 50px;
+        padding-bottom: 60px;
+        &_carousel {
+            .swiper {
+                max-width: calc(100vw - 2* 12vw);
+                &-button {
+                    &-prev {
+                        left: 25px;
+                    }
+                    &-next {
+                        right: 25px;
+                    }
+                }
+            }
+        }
+        &_item {
+            &_name {
+                font-size: 26px;
+            }
+            &_description {
+                font-size: 15px;
+                padding: 0 10px;
+            }
+        }
+    }
+
+    @include tablet {
+        &_carousel {
+            .swiper {
+                max-width: calc(100vw - 2* 15vw);
+                &-button {
+                    &-prev {
+                        left: 15px;
+                    }
+                    &-next {
+                        right: 15px;
+                    }
+                }
+            }
+        }
+        &_item {
+            &_photo {
+                margin-bottom: 7px;
+            }
+            &_name {
+                font-size: 22px;
+                margin-bottom: 5px;
+            }
+            &_description {
+                font-size: 13px;
+            }
+        }
+    }
+
+    @include mobile {
+        padding-top: 30px;
+        &_carousel {
+            .swiper {
+                &-button {
+                    &-prev {
+                        top: calc(60vw + 32px);
+                        left: 15vw;
+                    }
+                    &-next {
+                        top: calc(60vw + 32px);
+                        right: 15vw;
+                    }
+                }
+            }
+        }
+        &_item {
+            &_photo {
+                height: 60vw;
+                margin-bottom: 15px;
+            }
+            &_name {
+                width: 100%;
+                max-width: 55vw;
+                text-align: center;
+                margin: 0 auto 10px auto;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        h2, .h2 {
+            margin: 0 auto 31px auto;
+        }
+        &_carousel {
+            .swiper {
+                max-width: 100%;
+                &-button {
+                    &-prev {
+                        top: calc(88vw + 54px);
+                        left: 10vw;
+                        width: 16px;
+                        height: 13px;
+                    }
+                    &-next {
+                        top: calc(88vw + 54px);
+                        right: 10vw;
+                        width: 16px;
+                        height: 13px;
+                    }
+                }
+            }
+        }
+        &_item {
+            &_photo {
+                height: 88vw;
+                margin-bottom: 28px;
+            }
+            &_name {
+                font-size: 16px;
+                max-width: 75vw;
+            }
+            &_description {
+                font-size: 10px;
+            }
+        }
+    }
+}

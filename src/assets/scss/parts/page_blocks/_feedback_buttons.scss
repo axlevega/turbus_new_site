@@ -1,0 +1,88 @@
+.feedback_buttons {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    h2, .h2 {
+        text-align: center;
+        display: table;
+        margin: 0 auto 53px auto;
+        line-height: 1;
+        font-weight: 300;
+    }
+    &_wrap {
+        max-width: calc(100vw - 2 * 13.7vw);
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        margin: 0 auto;
+        .btn {
+            flex: 0 0 calc(33% - 10px);
+            justify-content: center;
+            height: 56px;
+        }
+    }
+
+    @include notebook {
+        &_wrap {
+            max-width: calc(100vw - 2 * 11vw);
+        }
+    }
+
+    @include smallDesktop {
+        &_wrap {
+            max-width: 100%;
+        }
+    }
+
+    @include tablet {
+        padding-top: 45px;
+        h2, .h2 {
+            margin-bottom: 35px;
+            font-size: 32px;
+        }
+        &_wrap {
+            gap: 10px;
+            .btn {
+                flex: 0 0 calc(33% - 5px);
+                font-size: 22px;
+                height: 48px;
+            }
+        }
+    }
+
+    @include mobile {
+        padding-top: 30px;
+        h2, .h2 {
+            margin-bottom: 20px;
+        }
+        &_wrap {
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: column;
+            .btn {
+                flex: 0 0 50%;
+                width: 50%;
+                max-width: 50%;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        h2, .h2 {
+            font-size: 20px;
+            margin-bottom: 31px;
+        }
+        &_wrap {
+            gap: 9px;
+            .btn {
+                font-size: 14px;
+                height: auto;
+                padding-top: 4px;
+                padding-bottom: 3px;
+            }
+        }
+    }
+}

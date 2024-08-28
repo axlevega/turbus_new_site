@@ -1,0 +1,137 @@
+.contacts {
+    padding-top: 30px;
+    padding-bottom: 70px;
+    >.content-wrapper {
+        max-width: calc(100vw - 2 * 13.7vw);
+        display: flex;
+        justify-content: space-between;
+        gap: 0;
+        flex-wrap: nowrap;
+    }
+    &_item {
+        flex: auto;
+        max-width: 25%;
+        &_title {
+            font-size: 30px;
+            font-family: var(--font-headers);
+            text-transform: uppercase;
+        }
+        &_values {
+            font-size: 18px;
+            padding: 20px 0;
+            border-top: 1.6px #CCCBCB solid;
+            border-bottom: 1.6px #CCCBCB solid;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            flex-wrap: wrap;
+            p {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        &:last-of-type {
+            .contacts_item_title {text-align: right;}
+            .contacts_item_values {
+                p {
+                    justify-content: flex-end;
+                    gap: 15px;
+                }
+            }
+        }
+    }
+
+    @include notebook {
+        >.content-wrapper {
+            max-width: calc(100vw - 2 * 11vw);
+        }
+        // &_item {
+        //     &_values {
+        //         br {display: none;}
+        //     }
+        // }
+    }
+
+    @include smallDesktop {
+        padding-top: 20px;
+        padding-top: 40px;
+        >.content-wrapper {
+            max-width: var(--max-width);
+        }
+        &_item {
+            &_title {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+            &_values {
+                font-size: 16px;
+                padding: 15px 0;
+            }
+        }
+    }
+
+    @include tablet {
+        padding-top: 20px;
+        padding-bottom: 30px;
+        >.content-wrapper {
+            flex-wrap: wrap;
+            gap: 25px 0;
+        }
+        &_item {
+            flex: 0 0 50%;
+            max-width: 50%;
+            &_title {
+                margin-bottom: 5px;
+            }
+            &_values {
+                padding: 10px 0;
+                gap: 10px;
+            }
+            &:last-of-type {
+                .contacts_item_title {text-align: left;}
+                .contacts_item_values {
+                    p {
+                        justify-content: flex-start;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        &_item {
+            &_title {
+                margin-bottom: 15px;
+            }
+            &_values {
+                padding-right: 15px;
+                gap: 0;
+                br {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding-top: 9px;
+        >.content-wrapper {
+            gap: 15px 0;
+        }
+        &_item {
+            &_title {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+            &_values {
+                font-size: 10px;
+                padding: 5px 10px 5px 0;
+                font-weight: 500;
+                p {
+                    gap: 10px;
+                }
+            }
+        }
+    }
+}

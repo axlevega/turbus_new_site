@@ -1,6 +1,4 @@
 // Плагины
-// @import '../../../node_modules/lightbox2/dist/css/lightbox.min';
-// @import '../../../node_modules/select2/dist/css/select2.min';
 @import '../../../node_modules/swiper/swiper.scss';
 @import '../../../node_modules/swiper/modules/scrollbar.scss';
 @import '../../../node_modules/swiper/modules/navigation.scss';
@@ -9,15 +7,33 @@
 @import '../../../node_modules/swiper/modules/effect-creative.scss';
 @import '../../../node_modules/@fancyapps/ui/dist/fancybox/fancybox';
 
-// Настройка
+// Настройки
 @import './components/fonts';
 @import './mixins/media';
 @import './mixins/scrollbar';
 @import './utils/variables';
 @import './utils/global';
 
+// Сквозные блоки
 @import './parts/modals';
 @import './parts/footer';
 @import './parts/header';
 
+// Основные страницы
 @import './pages/index';
+
+// Куски основных страниц
+@import './parts/page_blocks/main_screen';
+@import './parts/page_blocks/bullets';
+@import './parts/page_blocks/directs';
+@import './parts/page_blocks/gallery';
+@import './parts/page_blocks/next_tours';
+@import './parts/page_blocks/personal_bullets';
+@import './parts/page_blocks/reviews';
+@import './parts/page_blocks/values';
+@import './parts/page_blocks/team';
+@import './parts/page_blocks/trust';
+@import './parts/page_blocks/ext_links';
+@import './parts/page_blocks/feedback_buttons';
+@import './parts/page_blocks/contacts';
+@import './parts/page_blocks/map';

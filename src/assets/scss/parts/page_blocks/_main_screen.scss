@@ -1,0 +1,163 @@
+.mainscreen {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - var(--header-height));
+    max-height: 1012px;
+    position: relative;
+    >.content-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        padding-top: 70px;
+        padding-bottom: 45px;
+        align-items: center;
+        position: relative;
+        z-index: 20;
+    }
+    &_text {
+        color: white;
+        h1, .h1 {
+            text-align: center;
+            margin: 0 auto 13px auto;
+            font-size: 72px;
+            line-height: 1;
+            letter-spacing: 1.5px;
+        }
+    }
+    &_description {
+        font-size: 25px;
+        text-transform: uppercase;
+        font-family: var(--font-headers);
+        text-align: center;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        p {
+            margin: 0 auto;
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+    }
+    &_buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 27px;
+        justify-content: center;
+    }
+    &_toggler {
+        height: 50px;
+        width: 100%;
+        max-width: 208px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: nowrap;
+        &_caption {
+            flex: 0 0 20%;
+            p {
+                text-transform: uppercase;
+                color: white;
+                border-bottom: 2px var(--color-main-blue) solid;
+                font-size: 20px;
+                font-family: var(--font-headers);
+                margin: 0;
+                text-align: center;
+            }
+        }
+        &_button {
+            width: 87px;
+            height: 39px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: table;
+            cursor: pointer;
+            transition: .2s;
+            &:hover {
+                filter: brightness(1.1);
+            }
+        }
+        &-winter {
+            .mainscreen_toggler_button {
+                background-image: url('../img/icons/season_toggler_winter.svg');
+            }
+        }
+        &-summer {
+            .mainscreen_toggler_button {
+                background-image: url('../img/icons/season_toggler_summer.svg');
+            }
+        }
+    }
+    &:after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 40%;
+        display: block;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 10%, rgba(0, 0, 0, 0) 100%);
+        z-index: 10;
+    }
+
+    @include tablet {
+        &_text {
+            h1, .h1 {
+                font-size: 56px;
+            }
+        }
+        &_description {
+            font-size: 20px;
+        }
+    }
+
+    @include mobile {
+        max-height: 600px;
+        &_text {
+            h1, .h1 {
+                font-size: 42px;
+                margin-bottom: 20px;
+            }
+        }
+        &_description {
+            font-size: 18px;
+            p {
+                line-height: 1.1;
+                margin-bottom: 5px;
+            }
+        }
+        &_toggler {
+            gap: 10px;
+            &_caption {
+                p {
+                    font-size: 16px;
+                }
+            }
+            &_button {
+                width: 60px;
+                height: 28px;
+            }
+        }
+    }
+
+    @media (max-width: 414px) {
+        max-height: 505px;
+        >.content-wrapper {
+            padding-top: 53px;
+        }
+        &_text {
+            h1, .h1 {
+                font-size: 24px;
+                letter-spacing: 0.5px;
+                margin-bottom: 4px;
+            }
+        }
+        &_description {
+            font-size: 12px;
+        }
+    }
+}
