@@ -104,6 +104,13 @@
         z-index: 10;
     }
 
+    &-inner {
+        >.content-wrapper {
+            justify-content: center;
+            padding-top: 10px;
+        }
+    }
+
     @include tablet {
         &_text {
             h1, .h1 {
