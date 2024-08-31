@@ -1,6 +1,6 @@
 .direct_about {
     padding-top: 114px;
-    padding-bottom: 150px;
+    padding-bottom: 60px;
     >.content-wrapper {
         display: flex;
         gap: 30px;
@@ -75,7 +75,6 @@
 
     @include notebook {
         padding-top: 80px;
-        padding-bottom: 100px;
         &__text {
             padding: 0 3vw;
         }
@@ -109,7 +108,7 @@
 
     @include tablet {
         padding-top: 50px;
-        padding-bottom: 60px;
+        padding-bottom: 50px;
         >.content-wrapper {
             flex-wrap: wrap;
         }

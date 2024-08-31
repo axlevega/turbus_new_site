@@ -1,0 +1,135 @@
+.direct_bullets {
+    padding-top: 64px;
+    padding-bottom: 105px;
+    h2, .h2 {
+        text-align: center;
+        display: table;
+        margin: 0 auto 90px auto;
+        line-height: 1;
+        font-weight: 300;
+    }
+    &__wrap {
+        display: flex;
+        gap: 95px 30px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        max-width: calc(100vw - 2* 13.7vw);
+        margin: 0 auto;
+    }
+    &__item {
+        flex: 0 0 calc(33% - 30px);
+        padding-left: 80px;
+        position: relative;
+        &_icon {
+            width: 65px;
+            height: 65px;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        &_title {
+            font-size: 30px;
+            font-family: var(--font-headers);
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
+        &_text {
+            font-size: 18px;
+        }
+    }
+
+    @include notebook {
+        &__wrap {
+            max-width: 100%;
+        }
+    }
+
+    @include smallDesktop {
+        &__wrap {
+            gap: 60px 40px;
+        }
+        &__item {
+            &_title {
+                font-size: 22px;
+            }
+            &_text {
+                font-size: 14px;
+            }
+        }
+    }
+
+    @include tablet {
+        padding-top: 50px;
+        padding-bottom: 60px;
+        h2, .h2 {
+            margin-bottom: 50px;
+        }
+        &__wrap {
+            max-width: 100%;
+            gap: 40px;
+        }
+        &__item {
+            padding-left: 65px;
+            flex: 0 0 calc(50% - 40px);
+            &_icon {
+                width: 48px;
+                height: 48px;
+            }
+            &_title {
+                font-size: 20px;
+            }
+            &_text {
+                font-size: 14px;
+            }
+        }
+    }
+
+    @include mobile {
+        &__wrap {
+            gap: 20px;
+        }
+        &__item {
+            flex: 0 0 calc(50% - 15px);
+            padding-left: 40px;
+            &_icon {
+                width: 36px;
+                height: 36px;
+            }
+            &_title {
+                font-size: 18px;
+            }
+            &_text {
+                font-size: 11px;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding-top: 29px;
+        h2, .h2 {
+            margin-bottom: 23px;
+        }
+        &__wrap {
+            gap: 10px;
+        }
+        &__item {
+            padding-left: 25px;
+            flex: 0 0 calc(50% - 8px);
+            &_icon {
+                width: 20px;
+                height: 20px;
+            }
+            &_title {
+                font-size: 16px;
+            }
+            &_text {
+                font-size: 9px;
+            }
+        }
+    }
+}
