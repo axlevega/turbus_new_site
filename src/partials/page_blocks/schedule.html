@@ -7,10 +7,16 @@
     </div>
     <div class="content-wrapper schedule__wrapper">
         <div class="schedule__list is-active">
-            {{> schedule_item}}
-            {{> schedule_item_2}}
-            {{> schedule_item}}
-            {{> schedule_item_2}}
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    {{> schedule_item}}
+                    {{> schedule_item_2}}
+                    {{> schedule_item}}
+                    {{> schedule_item_2}}
+                    {{> schedule_item_2}}
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
         </div>
     </div>
 </section>

@@ -73,7 +73,6 @@ const swiper_inner_directs_carousel = new Swiper('.js-directs_inner_carousel .sw
   }
 });
 
-
 // Карусель для галерей
 const swiper_gallery_carousel = new Swiper('.gallery_wrapper .swiper', {
   slidesPerView: "auto",
@@ -87,7 +86,6 @@ const swiper_gallery_carousel = new Swiper('.gallery_wrapper .swiper', {
   },
   spaceBetween: 30,
 });
-
 
 // Карусель с отзывами
 const swiper_reviews_carousel = new Swiper('.reviews_carousel .swiper', {
@@ -161,5 +159,43 @@ const swiper_team_carousel = new Swiper('.team_carousel .swiper', {
     900: {
       slidesPerView: 3
     },
+  }
+});
+
+// Карусель с карточками туров в направлении
+const swiper_tours_carousel = new Swiper('.schedule__list .swiper', {
+  slidesPerView: 4,
+  modules: [Scrollbar],
+  observer: true,
+  spaceBetween: 20,
+  observeParents: true,
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  breakpoints: {
+    300: {
+      slidesPerView: 1.8,
+      spaceBetween: 10
+    },
+    420: {
+      slidesPerView: 2.1,
+      spaceBetween: 10
+    },
+    640: {
+      slidesPerView: 2.7,
+      spaceBetween: 10
+    },
+    760: {
+      slidesPerView: 3.2,
+      spaceBetween: 10
+    },
+    1020: {
+      slidesPerView: 3.8,
+      spaceBetween: 20
+    },
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 20
+    }
   }
 });

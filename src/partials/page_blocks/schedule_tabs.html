@@ -11,16 +11,26 @@
             <div class="schedule__tabs_title" data-tab_target="month_tab_2">Август 2024</div>
         </div>
         <div class="schedule__list is-active" data-tab_item id="month_tab_1">
-            {{> schedule_item}}
-            {{> schedule_item_2}}
-            {{> schedule_item}}
-            {{> schedule_item_2}}
-            {{> schedule_item_2}}
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    {{> schedule_item}}
+                    {{> schedule_item_2}}
+                    {{> schedule_item}}
+                    {{> schedule_item_2}}
+                    {{> schedule_item_2}}
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
         </div>
         <div class="schedule__list" data-tab_item id="month_tab_2">
-            {{> schedule_item}}
-            {{> schedule_item_2}}
-            {{> schedule_item}}
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    {{> schedule_item_2}}
+                    {{> schedule_item}}
+                    {{> schedule_item}}
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
         </div>
     </div>
 </section>
