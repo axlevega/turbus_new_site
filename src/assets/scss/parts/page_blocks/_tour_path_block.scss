@@ -1,0 +1,259 @@
+.tour_path {
+    h2, .h2 {
+        text-align: center;
+        margin: 0 auto 18px auto;
+    }
+    &__subtitle {
+        text-align: center;
+        display: table;
+        margin: 0 auto 77px auto;
+        font-size: 18px;
+        max-width: 700px;
+    }
+    &__container {
+        position: relative;
+        >.content-wrapper {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: stretch;
+        }
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            display: block;
+            z-index: 1;
+        }
+        &::before {
+            background-color: #F8F8F8;
+            left: 0;
+        }
+        &::after {
+            background-color: #000000;
+            right: 0;
+        }
+    }
+    &__map {
+        flex: 0 0 50%;
+        display: flex;
+        align-items: center;
+        background-color: #F8F8F8;
+        &_wrap {
+            position: relative;
+            // width: 830px;
+            // height: 616px;
+           
+        }
+        img {
+            position: relative;
+            z-index: 5;
+        }
+        &_point {
+            position: absolute;
+            z-index: 10;
+            cursor: pointer;
+            width: 17px;
+            height: 17px;
+            background: url('../img/icons/ic_path_point.svg') no-repeat center;
+            background-size: contain;
+            transform: translateX(-50%) translateY(-50%);
+            transition: .1s;
+            animation-name: path_point;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-duration: 1.5s;
+            &:before {
+                position: absolute;
+                content: attr(data-title);
+                display: block;
+                font-size: 14px;
+                color: white;
+                display: flex;
+                font-family: var(--font-headers);
+                background-color: var(--color-main-blue);
+                text-transform: uppercase;
+                align-items: center;
+                white-space: nowrap;
+                padding: 3px 5px 1px 5px;
+                letter-spacing: 0.5px;
+                line-height: 1;
+                top: -6px;
+            }
+            &-left:before {
+                right: 23px;
+
+            }
+            &-right:before {
+                left: 23px;
+            }
+            &.is-active {
+                background-image: url('../img/icons/ic_path_point-active.svg');
+                animation: none;
+                &:before {
+                    background-color: #FFC978;
+                    color: #454545;
+                }
+            }
+            &:nth-of-type(1) { animation-delay: -0.0s; } 
+            &:nth-of-type(2) { animation-delay: -0.5s; } 
+            &:nth-of-type(3) { animation-delay: -1.0s; } 
+            &:nth-of-type(4) { animation-delay: -1.5s; } 
+            &:nth-of-type(5) { animation-delay: -2.0s; } 
+            &:nth-of-type(6) { animation-delay: -2.5s; }
+            &:nth-of-type(7) { animation-delay: -0.5s; } 
+            &:nth-of-type(8) { animation-delay: -1.0s; } 
+            &:nth-of-type(9) { animation-delay: -1.5s; } 
+            &:nth-of-type(10) { animation-delay: -2.0s; } 
+            &:nth-of-type(11) { animation-delay: -2.5s; }
+        }
+    }
+    &__info {
+        flex: 0 0 50%;
+        max-width: 50%;
+        color: white;
+        padding: 70px 8vw;
+    }
+    &__place {
+        display: none;
+        flex-direction: column;
+        gap: 30px;
+        &_title {
+            font-size: 30px;
+            font-family: var(--font-headers);
+            text-transform: uppercase;
+        }
+        &_description {
+            font-size: 18px;
+        }
+        &_gallery {
+            position: relative;
+            .swiper {
+                &-slide {
+                    img {
+                        // width: 121px;
+                        // height: 121px;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                &-button {
+                    z-index: 50;
+                    &-prev {
+                        left: -40px;
+                        filter: invert(1) brightness(1);
+                    }
+                    &-next {
+                        right: -40px;
+                        filter: invert(1) brightness(1);
+                    }
+                }
+            }
+        }
+        &_button {
+            .btn__framed {
+                padding: 8px 25px 6px 25px;
+                border-width: 1px;
+                border-color: white;
+                font-weight: 100;
+                &:hover {
+                    background-color: white;
+                    color: black;
+                }
+            }
+        }
+        &.is-active {
+            display: flex;
+        }
+    }
+
+    @include smallDesktop {
+        &__container {
+            >.content-wrapper {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+        &__map {
+            flex: 0 0 100%;
+            max-width: 100%;
+            width: 100%;
+            &_wrap {
+                margin: 0 auto;
+            }
+        }
+        &__info {
+            flex: 0 0 100%;
+            max-width: 100%;
+            width: 100%;
+            background-color: #000000;
+        }
+    }
+
+    @include tablet {
+        &__place {
+            gap: 20px;
+            &_title {
+                font-size: 24px;
+            }
+            &_description {
+                font-size: 14px;
+            }
+            &_button {
+                .btn__framed {
+                    font-size: 18px;
+                }
+            }
+        }
+        &__info {
+            padding: 40px 50px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        &__place {
+            gap: 18px;
+            &_title {
+                font-size: 14px;
+            }
+            &_description {
+                font-size: 9px;
+            }
+            &_button {
+                .btn__framed {
+                    font-size: 14px;
+                }
+            }
+            &_gallery {
+                .swiper {
+                    &-button {
+                        &-prev {
+                            left: -15px;
+                            width: 14px;
+                            height: 14px;
+                            margin-top: -10px;
+                        }
+                        &-next {
+                            right: -15px;
+                            width: 14px;
+                            height: 14px;
+                            margin-top: -10px;
+                        }
+                    }
+                }
+            }
+        }
+        &__info {
+            padding: 30px 20px;
+        }
+    }
+}

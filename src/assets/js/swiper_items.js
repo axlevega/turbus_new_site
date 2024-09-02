@@ -199,3 +199,42 @@ const swiper_tours_carousel = new Swiper('.schedule__list .swiper', {
     }
   }
 });
+
+// Карусели с фотографиями в блоке с маршрутами
+const swiper_path_gallery_carousel = new Swiper('.js-tour_path_gallery .swiper', {
+  slidesPerView: 4,
+  modules: [Navigation],
+  observer: true,
+  spaceBetween: 20,
+  observeParents: true,
+  navigation: {
+    nextEl: '.js-tour_path_gallery .swiper-button-next',
+    prevEl: '.js-tour_path_gallery .swiper-button-prev',
+  },
+  breakpoints: {
+  //   300: {
+  //     slidesPerView: 1.8,
+  //     spaceBetween: 10
+  //   },
+  //   420: {
+  //     slidesPerView: 2.1,
+  //     spaceBetween: 10
+  //   },
+  //   640: {
+  //     slidesPerView: 2.7,
+  //     spaceBetween: 10
+  //   },
+  //   760: {
+  //     slidesPerView: 3.2,
+  //     spaceBetween: 10
+  //   },
+    1020: {
+      slidesPerView: 6,
+      spaceBetween: 20
+    },
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 20
+    }
+  }
+});
