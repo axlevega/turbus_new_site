@@ -140,3 +140,32 @@ function showTab(tab_elem_id) {
 
 ////////////////////////////////////
 ////////////////////////////////////
+
+
+////////////////////////////////////
+/////// Аккордеоны /////////////////
+
+$('[data-accordion_item]').on('click', function(){
+  let accordionWrapper = $(this).parents('[data-accordion]').data('accordion');
+  let accordionItem = $(this).data('accordion_item');
+  closeAllAccordions(accordionWrapper,accordionItem);
+  showAccordionItem(accordionItem);
+})
+
+// Закрытие всех вкладок
+function closeAllAccordions(wrapperElem,excludeElem) {
+  $('[data-accordion='+wrapperElem+'] [data-accordion_item]').each(function() {
+    if ($(this).data('accordion_item') != excludeElem) {
+      $(this).removeClass('is-active');
+    }      
+  })
+}
+
+// Открытие одной вкладки
+function showAccordionItem(elem) {
+  let accordionElement = $('[data-accordion_item='+elem+']');
+  $(accordionElement).toggleClass('is-active');
+}
+
+////////////////////////////////////
+////////////////////////////////////

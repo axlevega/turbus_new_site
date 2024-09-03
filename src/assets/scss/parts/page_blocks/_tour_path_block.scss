@@ -190,12 +190,29 @@
             &_wrap {
                 margin: 0 auto;
             }
+
         }
         &__info {
             flex: 0 0 100%;
             max-width: 100%;
             width: 100%;
             background-color: #000000;
+            position: relative;
+            &:before {
+                background-color: #000000;
+                z-index: 1;
+                display: block;
+                content: '';
+                left: -10vw;
+                top: 0;
+                right: -10vw;
+                bottom: 0;
+                position: absolute;
+            }
+        }
+        &__place {
+            z-index: 10;
+            position: relative;
         }
     }
 
@@ -254,6 +271,13 @@
         }
         &__info {
             padding: 30px 20px;
+        }
+        &__map {
+            &_point {
+                &:before {
+                    font-size: 10px;
+                }
+            }
         }
     }
 }
