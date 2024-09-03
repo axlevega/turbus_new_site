@@ -75,6 +75,8 @@
 
     @include tablet {
         &_places {
+            padding-top: 50px;
+            padding-bottom: 50px;
             &__container {
                 overflow: scroll;
                 img {
@@ -88,6 +90,11 @@
 
     @include mobile {
         &_places {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            h2, .h2 {
+                margin-bottom: 30px;
+            }
             &__container {
                 img {
                     object-fit: contain;
