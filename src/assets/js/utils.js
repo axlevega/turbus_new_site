@@ -118,25 +118,66 @@ $(document).ready(function () {
 ////////////////////////////////////
 /////// Табы ///////////////////////
 
-$('[data-tab_target').on('click', function() {
-  closeAllTabs();
-  showTab($(this).data('tab_target'));
-})
+document.addEventListener('click', function(event) {
+  // Проверяем, что клик был по элементу с атрибутом data-tab-target
+  var tabTrigger = event.target.closest('[data-tab-target]');
+  if (tabTrigger) {
+      // Получаем родительский контейнер табов
+      var tabContainer = tabTrigger.closest('[data-tab-container]');
+      if (!tabContainer) return;
 
-// Закрытие всех табов
-function closeAllTabs() {
-  $('[data-tab_item], [data-tab_target]').each(function() {
-    $(this).removeClass('is-active');
-  })
-}
+      // Получаем ID контента таба
+      var tabId = tabTrigger.getAttribute('data-tab-target');
 
-// Открытие одного таба
-function showTab(tab_elem_id) {
-  if ($('#'+tab_elem_id).length) {
-    $('[data-tab_target=' + tab_elem_id).addClass('is-active');
-    $('#' + tab_elem_id).addClass('is-active');
+      // Деактивируем все табы и контент внутри текущего контейнера (только на текущем уровне)
+      deactivateTabs(tabContainer, tabTrigger);
+
+      // Активируем кликнутый таб и соответствующий контент
+      activateTab(tabContainer, tabId);
   }
+});
+
+function deactivateTabs(container, currentTabTrigger) {
+  // Удаляем класс is-active у всех элементов на текущем уровне контейнера
+  container.querySelectorAll('[data-tab-target]').forEach(function(tab) {
+      // Деактивируем только табы, которые находятся на том же уровне, что и текущий триггер
+      if (tab.closest('[data-tab-container]') === container) {
+          tab.classList.remove('is-active');
+      }
+  });
+
+  container.querySelectorAll('[data-tab-content]').forEach(function(content) {
+      // Деактивируем только контент, который находится на том же уровне, что и текущий триггер
+      if (content.closest('[data-tab-container]') === container) {
+          content.classList.remove('is-active');
+      }
+  });
 }
+
+function activateTab(container, tabId) {
+  // Активируем кликнутый таб
+  var tabTrigger = container.querySelector('[data-tab-target="' + tabId + '"]');
+  if (tabTrigger) tabTrigger.classList.add('is-active');
+
+  // Активируем соответствующий контент
+  var tabContent = container.querySelector('[data-tab-content][id="' + tabId + '"]');
+  if (tabContent) tabContent.classList.add('is-active');
+}
+
+// Инициализация: скрыть все контенты, кроме активных по умолчанию
+document.querySelectorAll('[data-tab-container]').forEach(function(container) {
+  var activeTab = container.querySelector('[data-tab-target].is-active');
+  if (activeTab) {
+      var tabId = activeTab.getAttribute('data-tab-target');
+      activateTab(container, tabId);
+  } else {
+      // Если нет активных табов, скрываем все контенты
+      deactivateTabs(container);
+  }
+});
+
+
+
 
 ////////////////////////////////////
 ////////////////////////////////////
@@ -166,6 +207,34 @@ function showAccordionItem(elem) {
   let accordionElement = $('[data-accordion_item='+elem+']');
   $(accordionElement).toggleClass('is-active');
 }
+
+////////////////////////////////////
+////////////////////////////////////
+
+
+////////////////////////////////////
+// Динамическая ширина разделителей между событиями в программе тура
+
+/*
+document.addEventListener('DOMContentLoaded', function () {
+  const container = document.querySelector('.tour_program__day_nav');
+  const items = container.querySelectorAll('.tour_program__day_nav_item');
+  
+  function updateGapWidth() {
+    if (items.length > 1) {
+      // Вычисляем расстояние между первым и вторым элементами
+      const gapWidth = items[1].offsetLeft - (items[0].offsetLeft + items[0].offsetWidth) - 28;
+      container.style.setProperty('--tour-event-gap-width', `${gapWidth}px`);
+    }
+  }
+
+  // Первоначальный расчёт
+  updateGapWidth();
+
+  // Обновление при изменении размера окна
+  window.addEventListener('resize', updateGapWidth);
+});
+*/
 
 ////////////////////////////////////
 ////////////////////////////////////
