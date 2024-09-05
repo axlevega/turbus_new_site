@@ -162,6 +162,8 @@ function activateTab(container, tabId) {
   // Активируем соответствующий контент
   var tabContent = container.querySelector('[data-tab-content][id="' + tabId + '"]');
   if (tabContent) tabContent.classList.add('is-active');
+
+  setTimeout(window.updateGapWidth, 0);
 }
 
 // Инициализация: скрыть все контенты, кроме активных по умолчанию
@@ -215,26 +217,29 @@ function showAccordionItem(elem) {
 ////////////////////////////////////
 // Динамическая ширина разделителей между событиями в программе тура
 
-/*
 document.addEventListener('DOMContentLoaded', function () {
-  const container = document.querySelector('.tour_program__day_nav');
-  const items = container.querySelectorAll('.tour_program__day_nav_item');
+  const containers = document.querySelectorAll('.tour_program__day_nav');
   
-  function updateGapWidth() {
-    if (items.length > 1) {
-      // Вычисляем расстояние между первым и вторым элементами
-      const gapWidth = items[1].offsetLeft - (items[0].offsetLeft + items[0].offsetWidth) - 28;
-      container.style.setProperty('--tour-event-gap-width', `${gapWidth}px`);
-    }
+  // Определяем функцию в глобальной области
+  window.updateGapWidth = function() {
+    containers.forEach(container => {
+      const items = container.querySelectorAll('.tour_program__day_nav_item');
+      if (items.length > 1) {
+        // Вычисляем расстояние между первым и вторым элементами
+        const gapWidth = items[1].offsetLeft - (items[0].offsetLeft + items[0].offsetWidth) - 28;
+        container.style.setProperty('--tour-event-gap-width', `${gapWidth}px`);
+      }
+    });
+  };
+
+  if (containers.length > 0) {
+    // Первоначальный расчёт для всех контейнеров
+    window.updateGapWidth();
+
+    // Обновление при изменении размера окна
+    window.addEventListener('resize', window.updateGapWidth);
   }
-
-  // Первоначальный расчёт
-  updateGapWidth();
-
-  // Обновление при изменении размера окна
-  window.addEventListener('resize', updateGapWidth);
 });
-*/
 
 ////////////////////////////////////
 ////////////////////////////////////

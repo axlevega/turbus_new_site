@@ -1,0 +1,127 @@
+.price_table {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    h2, .h2 {
+        margin: 0 auto;
+        text-align: center;
+    }
+    &__wrapper {
+        padding-top: 23px;
+        padding-bottom: 23px;
+    }
+    &__header {
+        font-size: 30px;
+        font-family: var(--font-headers);
+        text-transform: uppercase;
+        white-space: nowrap;
+        .price_table__row {
+            border: none;
+            padding: 10px 0;
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+    &__body {
+        font-size: 18px;
+    }
+    &__row {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        border-bottom: 1px #f1f1f1 solid;
+        padding: 22px 0;
+        align-items: center;
+        &:hover {
+            background-color: #f7f7f7;
+        }
+    }
+    &__column {
+        &:last-of-type {
+            text-align: right;
+        }
+        &-name {
+            flex: 0 0 60%;
+            padding-right: 10px;
+        }
+        &-price {
+            flex: 0 0 30%;
+            padding-left: 10px;
+            padding-right: 10px;
+            span {
+                white-space: nowrap;
+            }
+        }
+        &:last-of-type {
+            flex: 0 0 10%;
+        }
+    }
+    &__order_btn {
+        color: var(--color-main-blue);
+        text-decoration: underline;
+        font-weight: 400;
+        cursor: pointer;
+    }
+
+    @include notebook {
+        &__header {
+            font-size: 24px;
+        }
+        &__body {
+            font-size: 16px;
+        }
+    }
+
+    @include smallDesktop {
+        &__order_btn {
+            font-size: 0px;
+            &:before {
+                content: attr(data-mobile_text);
+                font-size: 14px;
+            }
+        }
+    }
+
+    @include tablet {
+        &__header {
+            font-size: 20px;
+        }
+        &__body {
+            font-size: 14px;
+        }
+        &__row {
+            padding: 15px 0;
+        }
+    }
+
+    @include mobile {
+        &__header {
+            font-size: 18px;
+        }
+        &__body {
+            font-size: 12px;
+        }
+        &__row {
+            padding: 12px 0;
+        }
+        &__order_btn {
+            &:before {
+                font-size: 12px;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        &__body {
+            font-size: 9px;
+        }
+        &__row {
+            padding: 11px 0;
+        }
+        &__order_btn {
+            &:before {
+                font-size: 9px;
+            }
+        }
+    }
+}
