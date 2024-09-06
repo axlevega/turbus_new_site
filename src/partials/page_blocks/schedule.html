@@ -9,11 +9,9 @@
         <div class="schedule__list is-active">
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    {{> schedule_item}}
-                    {{> schedule_item_2}}
-                    {{> schedule_item}}
-                    {{> schedule_item_2}}
-                    {{> schedule_item_2}}
+                    {{#each tours}}
+                        {{> schedule_item}}
+                    {{/each}}
                 </div>
                 <div class="swiper-scrollbar"></div>
             </div>

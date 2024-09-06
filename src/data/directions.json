@@ -1,0 +1,79 @@
+[
+    {
+        "name": "Шерегеш",
+        "season": "winter",
+        "where_from": "Из Красноярска",
+        "image_preview": "/assets/img/direct_carousel_preview.jpg",
+        "image_screen": "/assets/img/direction_screen_01.jpg"
+    },
+    {
+        "name": "Приисковое",
+        "season": "summer",
+        "where_from": "Из Красноярска",
+        "image_preview": "/assets/img/direct_carousel_preview_03.jpg",
+        "image_screen": "/assets/img/direction_screen_02.jpg"
+    },
+    {
+        "name": "Архыз-Домбай-Эльбрус",
+        "season": "winter",
+        "where_from": "Из Красноярска",
+        "image_preview": "/assets/img/direct_carousel_preview_04.jpg",
+        "image_screen": "/assets/img/direction_screen_03.jpg"
+    },
+    {
+        "name": "Ергаки",
+        "season": "winter",
+        "where_from": "Из Красноярска",
+        "image_preview": "/assets/img/direct_carousel_preview_02.jpg",
+        "image_screen": "/assets/img/direction_screen_04.jpg"
+    },
+    {
+        "name": "Ергаки",
+        "season": "winter",
+        "where_from": "Из других регионов",
+        "image_preview": "/assets/img/direct_carousel_preview_02.jpg",
+        "image_screen": "/assets/img/direction_screen_04.jpg"
+    },
+    {
+        "name": "Шерегеш",
+        "season": "summer",
+        "where_from": "Из других регионов",
+        "image_preview": "/assets/img/direct_carousel_preview.jpg",
+        "image_screen": "/assets/img/direction_screen_01.jpg"
+    },
+    {
+        "name": "Архыз-Домбай-Эльбрус",
+        "season": "summer",
+        "where_from": "Из других регионов",
+        "image_preview": "/assets/img/direct_carousel_preview_04.jpg",
+        "image_screen": "/assets/img/direction_screen_03.jpg"
+    },
+    {
+        "name": "Приисковое",
+        "season": "summer",
+        "where_from": "Из других регионов",
+        "image_preview": "/assets/img/direct_carousel_preview_03.jpg",
+        "image_screen": "/assets/img/direction_screen_02.jpg"
+    },
+    {
+        "name": "Шерегеш",
+        "season": "winter",
+        "where_from": "Из Красноярска",
+        "image_preview": "/assets/img/direct_carousel_preview.jpg",
+        "image_screen": "/assets/img/direction_screen_01.jpg"
+    },
+    {
+        "name": "Архыз-Домбай-Эльбрус",
+        "season": "summer",
+        "where_from": "Из Красноярска",
+        "image_preview": "/assets/img/direct_carousel_preview_04.jpg",
+        "image_screen": "/assets/img/direction_screen_03.jpg"
+    },
+    {
+        "name": "Приисковое",
+        "season": "winter",
+        "where_from": "Из других регионов",
+        "image_preview": "/assets/img/direct_carousel_preview_03.jpg",
+        "image_screen": "/assets/img/direction_screen_02.jpg"
+    }
+]

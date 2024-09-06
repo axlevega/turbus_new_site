@@ -17,36 +17,11 @@
             <div class="directs_carousel js-directs_carousel is-active" data-tab-content id="directs_tab_1">
                 <div class="swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide directs_slide">
-                            <a href="#" style="background-image: url('/assets/img/direct_carousel_preview.jpg');">
-                                <p>Шерегеш</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide directs_slide">
-                            <a href="#" style="background-image: url('/assets/img/direct_carousel_preview.jpg');">
-                                <p>Ергаки</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide directs_slide">
-                            <a href="#" style="background-image: url('/assets/img/direct_carousel_preview.jpg');">
-                                <p>Приисковое</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide directs_slide">
-                            <a href="#" style="background-image: url('/assets/img/direct_carousel_preview.jpg');">
-                                <p>Шерегеш</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide directs_slide">
-                            <a href="#" style="background-image: url('/assets/img/direct_carousel_preview.jpg');">
-                                <p>Ергаки</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide directs_slide">
-                            <a href="#" style="background-image: url('/assets/img/direct_carousel_preview.jpg');">
-                                <p>Приисковое</p>
-                            </a>
-                        </div>
+                        {{#each directions}}
+                            {{#compareValues season '==' 'winter' '&&' where_from '==' 'Из Красноярска'}}
+                                {{> directs_carousel_item}}
+                            {{/compareValues }}
+                        {{/each}}
                     </div>
                     <div class="swiper-scrollbar"></div>
                 </div>
@@ -54,26 +29,11 @@
             <div class="directs_carousel js-directs_carousel" data-tab-content id="directs_tab_2">
                 <div class="swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide directs_slide">
-                            <a href="#" style="background-image: url('/assets/img/direct_carousel_preview.jpg');">
-                                <p>Ергаки</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide directs_slide">
-                            <a href="#" style="background-image: url('/assets/img/direct_carousel_preview.jpg');">
-                                <p>Приисковое</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide directs_slide">
-                            <a href="#" style="background-image: url('/assets/img/direct_carousel_preview.jpg');">
-                                <p>Шерегеш</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide directs_slide">
-                            <a href="#" style="background-image: url('/assets/img/direct_carousel_preview.jpg');">
-                                <p>Ергаки</p>
-                            </a>
-                        </div>
+                        {{#each directions}}
+                            {{#compareValues season '==' 'winter' '&&' where_from '==' 'Из других регионов'}}
+                                {{> directs_carousel_item}}
+                            {{/compareValues }}
+                        {{/each}}
                     </div>
                     <div class="swiper-scrollbar"></div>
                 </div>

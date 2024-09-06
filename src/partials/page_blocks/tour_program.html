@@ -1,175 +1,51 @@
 <section class="tour_program" data-tab-container>
     <div class="tour_program__nav">
-        <div class="tour_program__nav_item is-active" data-tab-target="tour_day_1">День 1</div>
-        <div class="tour_program__nav_item" data-tab-target="tour_day_2">День 2</div>
-        <div class="tour_program__nav_item" data-tab-target="tour_day_3">День 3</div>
-        <div class="tour_program__nav_item" data-tab-target="tour_day_4">День 4</div>
-        <div class="tour_program__nav_item" data-tab-target="tour_day_5">День 5</div>
-        <div class="tour_program__nav_item" data-tab-target="tour_day_6">День 6</div>
-        <div class="tour_program__nav_item" data-tab-target="tour_day_7">День 7</div>
+        {{#each programs}}
+            <div class="tour_program__nav_item {{#if is-active}}is-active{{/if}}" data-tab-target="tour_day_{{increment @index}}">{{day}}</div>
+        {{/each}}
     </div>
     <div class="tour_program__content">
-        <div class="tour_program__day is-active" data-tab-content id="tour_day_1">
-            <div class="tour_program__day_content">
-                <div class="content-wrapper" data-tab-container>
-                    <div class="tour_program__day_event is-active" data-tab-content id="tour_day_1_event_1">
-                        <p class="tour_program__day_event_title">1. Прибытие на базу отдыха (район Горно-Алтайска)</p>
-                        <p class="tour_program__day_event_subtitle">Ориентировочное время с 10.00 до 13.00</p>
-                        <div class="tour_program__day_event_description">
-                            <p>Настрой на первый день очень важен! По опыту можем сказать, что день после ночного
-                                переезда начинается непросто, а нужно сразу решить много бытовых вопросов и
-                                подготовиться к новым впечатлениям. Рекомендуем вам с пониманием относится друг к другу
-                                и обстоятельствам.</p>
+        {{#each programs}}
+            <div class="tour_program__day {{#if is-active}}is-active{{/if}}" data-tab-content id="tour_day_{{increment @index}}">
+                <div class="tour_program__day_content">
+                    <div class="content-wrapper" data-tab-container>
+                        {{#each events}}
+                            <div class="tour_program__day_event {{#if is-active}}is-active{{/if}}" data-tab-content id="tour_day_{{increment @../index}}_event_{{increment @index}}">
+                                <p class="tour_program__day_event_title">{{increment @index}}. {{title}}</p>
+                                <p class="tour_program__day_event_subtitle">{{subtitle}}</p>
+                                <div class="tour_program__day_event_description">
+                                    {{{description}}}
+                                </div>
+                            </div>
+                        {{/each}}
+                        <div class="tour_program__day_nav">
+                            {{#each events}}
+                                <div class="tour_program__day_nav_item {{#if is-active}}is-active{{/if}}" data-tab-target="tour_day_{{increment @../index}}_event_{{increment @index}}">
+                                    <div class="tour_program__day_nav_icon">{{increment @index}}</div>
+                                    <p>{{nav_title}}</p>
+                                </div>
+                            {{/each}}
+                            <div class="tour_program__day_nav_item tour_program__day_nav_item-last">
+                                <div class="tour_program__day_nav_icon"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="tour_program__day_event" data-tab-content id="tour_day_1_event_2">
-                        <p class="tour_program__day_event_title">2. Заселение в отель</p>
-                        <p class="tour_program__day_event_subtitle">Ориентировочное время с 10.00 до 13.00</p>
-                        <div class="tour_program__day_event_description">
-                            <p>Настрой на первый день очень важен! По опыту можем сказать, что день после ночного
-                                переезда начинается непросто, а нужно сразу решить много бытовых вопросов и
-                                подготовиться к новым впечатлениям. Рекомендуем вам с пониманием относится друг к другу
-                                и обстоятельствам.</p>
-                        </div>
+                </div>
+                <div class="tour_program__day_images">
+                    <div class="tour_program__day_image is-active">
+                        <img src="/assets/img/tour_program_image.jpg" alt="Прибытие на базу отдыха (район Горно-Алтайска)">
                     </div>
-                    <div class="tour_program__day_event" data-tab-content id="tour_day_1_event_3">
-                        <p class="tour_program__day_event_title">3. Варианты отдыха до заселения</p>
-                        <p class="tour_program__day_event_subtitle">Ориентировочное время с 10.00 до 13.00</p>
-                        <div class="tour_program__day_event_description">
-                            <p>Настрой на первый день очень важен! По опыту можем сказать, что день после ночного
-                                переезда начинается непросто, а нужно сразу решить много бытовых вопросов и
-                                подготовиться к новым впечатлениям. Рекомендуем вам с пониманием относится друг к другу
-                                и обстоятельствам.</p>
-                        </div>
+                    <div class="tour_program__day_image">
+                        <img src="/assets/img/tour_program_image.jpg" alt="Прибытие на базу отдыха (район Горно-Алтайска)">
                     </div>
-                    <div class="tour_program__day_event" data-tab-content id="tour_day_1_event_4">
-                        <p class="tour_program__day_event_title">4. Вечерний сбор</p>
-                        <p class="tour_program__day_event_subtitle">Ориентировочное время с 10.00 до 13.00</p>
-                        <div class="tour_program__day_event_description">
-                            <p>Настрой на первый день очень важен! По опыту можем сказать, что день после ночного
-                                переезда начинается непросто, а нужно сразу решить много бытовых вопросов и
-                                подготовиться к новым впечатлениям. Рекомендуем вам с пониманием относится друг к другу
-                                и обстоятельствам.</p>
-                        </div>
+                    <div class="tour_program__day_image">
+                        <img src="/assets/img/tour_program_image.jpg" alt="Прибытие на базу отдыха (район Горно-Алтайска)">
                     </div>
-                    <div class="tour_program__day_nav">
-                        <div class="tour_program__day_nav_item is-active" data-tab-target="tour_day_1_event_1">
-                            <div class="tour_program__day_nav_icon">1</div>
-                            <p>Прибытие на базу</p>
-                        </div>
-                        <div class="tour_program__day_nav_item" data-tab-target="tour_day_1_event_2">
-                            <div class="tour_program__day_nav_icon">2</div>
-                            <p>Заселение в отель</p>
-                        </div>
-                        <div class="tour_program__day_nav_item" data-tab-target="tour_day_1_event_3">
-                            <div class="tour_program__day_nav_icon">3</div>
-                            <p>Варианты отдыха до заселения</p>
-                        </div>
-                        <div class="tour_program__day_nav_item" data-tab-target="tour_day_1_event_4">
-                            <div class="tour_program__day_nav_icon">4</div>
-                            <p>Вечерний сбор</p>
-                        </div>
-                        <div class="tour_program__day_nav_item tour_program__day_nav_item-last">
-                            <div class="tour_program__day_nav_icon"></div>
-                        </div>
+                    <div class="tour_program__day_image">
+                        <img src="/assets/img/tour_program_image.jpg" alt="Прибытие на базу отдыха (район Горно-Алтайска)">
                     </div>
                 </div>
             </div>
-            <div class="tour_program__day_images">
-                <div class="tour_program__day_image is-active">
-                    <img src="/assets/img/tour_program_image.jpg" alt="Прибытие на базу отдыха (район Горно-Алтайска)">
-                </div>
-                <div class="tour_program__day_image">
-                    <img src="/assets/img/tour_program_image.jpg" alt="Прибытие на базу отдыха (район Горно-Алтайска)">
-                </div>
-                <div class="tour_program__day_image">
-                    <img src="/assets/img/tour_program_image.jpg" alt="Прибытие на базу отдыха (район Горно-Алтайска)">
-                </div>
-                <div class="tour_program__day_image">
-                    <img src="/assets/img/tour_program_image.jpg" alt="Прибытие на базу отдыха (район Горно-Алтайска)">
-                </div>
-            </div>
-        </div>
-        <div class="tour_program__day" data-tab-content id="tour_day_2">
-            <div class="tour_program__day_content">
-                <div class="content-wrapper" data-tab-container>
-                    <div class="tour_program__day_event is-active" data-tab-content id="tour_day_2_event_1">
-                        <p class="tour_program__day_event_title">1. Прибытие на базу отдыха (район Горно-Алтайска)</p>
-                        <p class="tour_program__day_event_subtitle">Ориентировочное время с 10.00 до 13.00</p>
-                        <div class="tour_program__day_event_description">
-                            <p>Настрой на первый день очень важен! По опыту можем сказать, что день после ночного
-                                переезда начинается непросто, а нужно сразу решить много бытовых вопросов и
-                                подготовиться к новым впечатлениям. Рекомендуем вам с пониманием относится друг к другу
-                                и обстоятельствам.</p>
-                        </div>
-                    </div>
-                    <div class="tour_program__day_event" data-tab-content id="tour_day_2_event_2">
-                        <p class="tour_program__day_event_title">2. Заселение в отель</p>
-                        <p class="tour_program__day_event_subtitle">Ориентировочное время с 10.00 до 13.00</p>
-                        <div class="tour_program__day_event_description">
-                            <p>Настрой на первый день очень важен! По опыту можем сказать, что день после ночного
-                                переезда начинается непросто, а нужно сразу решить много бытовых вопросов и
-                                подготовиться к новым впечатлениям. Рекомендуем вам с пониманием относится друг к другу
-                                и обстоятельствам.</p>
-                        </div>
-                    </div>
-                    <div class="tour_program__day_event" data-tab-content id="tour_day_2_event_3">
-                        <p class="tour_program__day_event_title">3. Варианты отдыха до заселения</p>
-                        <p class="tour_program__day_event_subtitle">Ориентировочное время с 10.00 до 13.00</p>
-                        <div class="tour_program__day_event_description">
-                            <p>Настрой на первый день очень важен! По опыту можем сказать, что день после ночного
-                                переезда начинается непросто, а нужно сразу решить много бытовых вопросов и
-                                подготовиться к новым впечатлениям. Рекомендуем вам с пониманием относится друг к другу
-                                и обстоятельствам.</p>
-                        </div>
-                    </div>
-                    <div class="tour_program__day_event" data-tab-content id="tour_day_2_event_4">
-                        <p class="tour_program__day_event_title">4. Вечерний сбор</p>
-                        <p class="tour_program__day_event_subtitle">Ориентировочное время с 10.00 до 13.00</p>
-                        <div class="tour_program__day_event_description">
-                            <p>Настрой на первый день очень важен! По опыту можем сказать, что день после ночного
-                                переезда начинается непросто, а нужно сразу решить много бытовых вопросов и
-                                подготовиться к новым впечатлениям. Рекомендуем вам с пониманием относится друг к другу
-                                и обстоятельствам.</p>
-                        </div>
-                    </div>
-                    <div class="tour_program__day_nav">
-                        <div class="tour_program__day_nav_item is-active" data-tab-target="tour_day_2_event_1">
-                            <div class="tour_program__day_nav_icon">1</div>
-                            <p>Прибытие на базу</p>
-                        </div>
-                        <div class="tour_program__day_nav_item" data-tab-target="tour_day_2_event_2">
-                            <div class="tour_program__day_nav_icon">2</div>
-                            <p>Заселение в отель</p>
-                        </div>
-                        <div class="tour_program__day_nav_item" data-tab-target="tour_day_2_event_3">
-                            <div class="tour_program__day_nav_icon">3</div>
-                            <p>Варианты отдыха до заселения</p>
-                        </div>
-                        <div class="tour_program__day_nav_item" data-tab-target="tour_day_2_event_4">
-                            <div class="tour_program__day_nav_icon">4</div>
-                            <p>Вечерний сбор</p>
-                        </div>
-                        <div class="tour_program__day_nav_item tour_program__day_nav_item-last">
-                            <div class="tour_program__day_nav_icon"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tour_program__day_images">
-                <div class="tour_program__day_image is-active">
-                    <img src="/assets/img/tour_program_image.jpg" alt="Прибытие на базу отдыха (район Горно-Алтайска)">
-                </div>
-                <div class="tour_program__day_image">
-                    <img src="/assets/img/tour_program_image.jpg" alt="Прибытие на базу отдыха (район Горно-Алтайска)">
-                </div>
-                <div class="tour_program__day_image">
-                    <img src="/assets/img/tour_program_image.jpg" alt="Прибытие на базу отдыха (район Горно-Алтайска)">
-                </div>
-                <div class="tour_program__day_image">
-                    <img src="/assets/img/tour_program_image.jpg" alt="Прибытие на базу отдыха (район Горно-Алтайска)">
-                </div>
-            </div>
-        </div>
+        {{/each}}
     </div>
 </section>
