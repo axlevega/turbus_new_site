@@ -4,12 +4,9 @@
         <div class="hotels_block__carousel">
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    {{> hotels_block_carousel_item}}
-                    {{> hotels_block_carousel_item}}
-                    {{> hotels_block_carousel_item}}
-                    {{> hotels_block_carousel_item}}
-                    {{> hotels_block_carousel_item}}
-                    {{> hotels_block_carousel_item}}
+                    {{#each hotels}}
+                        {{> hotels_block_carousel_item}}
+                    {{/each}}
                 </div>
                 <div class="hotels_block__carousel_navigation_wrapper">
                     <div class="hotels_block__carousel_navigation">

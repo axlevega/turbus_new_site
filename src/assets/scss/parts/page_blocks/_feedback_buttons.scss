@@ -22,6 +22,12 @@
             height: 56px;
         }
     }
+    &_text {
+        flex: 0 0 calc(33% - 10px);
+        font-size: 18px;
+        margin-top: 40px;
+        align-self: flex-start;
+    }
 
     @include notebook {
         &_wrap {
@@ -49,6 +55,11 @@
                 height: 48px;
             }
         }
+        &_text {
+            flex: 0 0 calc(33% - 5px);
+            font-size: 14px;
+            margin-top: 20px;
+        }
     }
 
     @include mobile {
@@ -65,6 +76,13 @@
                 width: 50%;
                 max-width: 50%;
             }
+        }
+        &_text {
+            flex: 0 0 60%;
+            width: 60%;
+            max-width: 60%;
+            text-align: center;
+            margin: 20px auto 0 auto;
         }
     }
 
@@ -83,6 +101,10 @@
                 padding-top: 4px;
                 padding-bottom: 3px;
             }
+        }
+        &_text {
+            font-size: 11px;
+            margin: 5px auto 0 auto;
         }
     }
 }

@@ -92,7 +92,9 @@ function pages() {
     .pipe(panini({
       root: src + '/pages/',
       layouts: src + '/layouts/',
-      partials: src + '/partials/'
+      partials: src + '/partials/',
+      helpers: src + '/helpers/',
+      data: src + '/data/',
     }))
     .pipe(gulp.dest(dist))
 }
@@ -243,7 +245,7 @@ function server(done) {
 function watch() {
   gulp.watch(assets, copy);
   gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, browser.reload));
-  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
+  gulp.watch('src/{layouts,partials,helpers,data}/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/assets/scss/**/*.scss').on('all', sass);
   gulp.watch('src/assets/cstm-css/**/*.css').on('all', customCss);
   gulp.watch('src/assets/cstm-js/**/*.js').on('all', gulp.series(javascript, browser.reload));

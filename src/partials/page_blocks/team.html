@@ -5,12 +5,9 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    {{> team_carousel_item}}
-                    {{> team_carousel_item}}
-                    {{> team_carousel_item}}
-                    {{> team_carousel_item}}
-                    {{> team_carousel_item}}
-                    {{> team_carousel_item}}
+                    {{#each team}}
+                        {{> team_carousel_item}}
+                    {{/each}}
                 </div>
             </div>
             <div class="swiper-button-next"></div>

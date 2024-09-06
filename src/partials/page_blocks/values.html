@@ -4,12 +4,10 @@
         <div class="values_carousel">
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    {{> values_carousel_item}}
-                    {{> values_carousel_item}}
-                    {{> values_carousel_item}}
-                    {{> values_carousel_item}}
+                    {{#each values}}
+                        {{> values_carousel_item}}
+                    {{/each}}
                 </div>
-                
             </div>
         </div>
     </div>
