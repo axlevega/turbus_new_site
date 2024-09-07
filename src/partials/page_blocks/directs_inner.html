@@ -12,42 +12,11 @@
             <div class="directs_carousel directs_carousel js-directs_inner_carousel is-active">
                 <div class="swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide directs_slide directs_slide-inner">
-                            <a href="#" style="background-image: url('/assets/img/direct_inner_carousel_preview.jpg');">
-                                <p>Знакомство с Алтаем</p>
-                                <p class="directs_slide__price">от 17.500 руб</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide directs_slide directs_slide-inner">
-                            <a href="#" style="background-image: url('/assets/img/direct_inner_carousel_preview.jpg');">
-                                <p>«Кругосветка по горному Алтаю</p>
-                                <p class="directs_slide__price">от 17.500 руб</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide directs_slide directs_slide-inner">
-                            <a href="#" style="background-image: url('/assets/img/direct_inner_carousel_preview.jpg');">
-                                <p>Золотое кольцо Алтая</p>
-                                <p class="directs_slide__price">от 17.500 руб</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide directs_slide directs_slide-inner">
-                            <a href="#" style="background-image: url('/assets/img/direct_inner_carousel_preview.jpg');">
-                                <p>Знакомство с Алтаем</p>
-                                <p class="directs_slide__price">от 17.500 руб</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide directs_slide directs_slide-inner">
-                            <a href="#" style="background-image: url('/assets/img/direct_inner_carousel_preview.jpg');">
-                                <p>«Кругосветка по горному Алтаю</p>
-                                <p class="directs_slide__price">от 17.500 руб</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide directs_slide directs_slide-inner">
-                            <a href="#" style="background-image: url('/assets/img/direct_inner_carousel_preview.jpg');">
-                                <p>Знакомство с Алтаем</p>
-                                <p class="directs_slide__price">от 17.500 руб</p>
-                            </a>
-                        </div>
+                        {{#each directions}}
+                            {{#compareValues season '==' 'winter' '&&' where_from '==' 'Из Красноярска'}}
+                                {{> directs_carousel_inner_item}}
+                            {{/compareValues }}
+                        {{/each}}
                     </div>
                     <div class="swiper-scrollbar"></div>
                 </div>
