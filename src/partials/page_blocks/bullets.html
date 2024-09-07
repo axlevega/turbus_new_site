@@ -1,18 +1,25 @@
 <section class="bullets">
     <div class="content-wrapper">
-        <p class="h2">Делаем активный туризм доступным</p>
-        <div class="bullets_textblock">
-            <div class="bullets_text">
-                <div class="bullets_text_icon" style="background-image: url('/assets/img/icons/ic_bullets_sheild.svg')"></div>
-                <div class="bullets_text_caption">Аккредитованный туроператор</div>
-                <p>Мы — аккредитованный туроператор внутреннего туризма, благодаря нашему опыту можно быть уверенным в качестве отдыха с нами.</p>
+        <p class="h2">{{bullets_header}}</p>
+        {{#checkValue bullets_subtitle}}
+            <div class="bullets__subtitle">
+                {{{bullets_subtitle}}}
             </div>
-            <div class="bullets_text">
-                <div class="bullets_text_icon" style="background-image: url('/assets/img/icons/ic_bullets_location.svg')"></div>
-                <div class="bullets_text_caption">Все заботы берем на себя</div>
-                <p>Мы продумываем все организационные моменты за вас, подбираем тур и программу, помогаем с поиском и покупкой билетов, рассказываем что, где и как.</p>
+        {{/checkValue}}
+        {{#if show_bullets_textblock}}
+            <div class="bullets_textblock">
+                <div class="bullets_text">
+                    <div class="bullets_text_icon" style="background-image: url('/assets/img/icons/ic_bullets_sheild.svg')"></div>
+                    <div class="bullets_text_caption">Аккредитованный туроператор</div>
+                    <p>Мы — аккредитованный туроператор внутреннего туризма, благодаря нашему опыту можно быть уверенным в качестве отдыха с нами.</p>
+                </div>
+                <div class="bullets_text">
+                    <div class="bullets_text_icon" style="background-image: url('/assets/img/icons/ic_bullets_location.svg')"></div>
+                    <div class="bullets_text_caption">Все заботы берем на себя</div>
+                    <p>Мы продумываем все организационные моменты за вас, подбираем тур и программу, помогаем с поиском и покупкой билетов, рассказываем что, где и как.</p>
+                </div>
             </div>
-        </div>
+        {{/if}}
         <div class="bullets_list">
             <div class="bullets_item">
                 <div class="bullets_item_caption">500+</div>

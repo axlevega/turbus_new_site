@@ -1,0 +1,90 @@
+.info_block {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    h2, .h2 {
+        text-align: center;
+        display: table;
+        margin: 0 auto 10px auto;
+        line-height: 1;
+    }
+    &__subtitle {
+        font-size: 25px;
+        font-family: var(--font-headers);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    &__list {
+        column-count: 2;
+        column-gap: 30px;
+        counter-reset: info_item_counter;
+    }
+    &__item {
+        position: relative;
+        font-size: 18px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px #f1f1f1 solid;
+        margin-left: 50px;
+        counter-increment: info_item_counter;
+        &:before {
+            position: absolute;
+            content: counter(info_item_counter);
+            font-size: 25px;
+            font-family: var(--font-headers);
+            color: white;
+            background-color: var(--color-main-blue);
+            border-radius: 20px;
+            width: 31px;
+            height: 31px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            left: -50px;
+            top: 0;
+        }
+    }
+
+    @include smallDesktop {
+        &__list {
+            column-count: 1;
+        }
+        &__item {
+            font-size: 16px;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+    }
+
+    @include tablet {
+        &__subtitle {
+            font-size: 16px;
+        }
+        &__item {
+            font-size: 14px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            margin-left: 40px;
+            &:before {
+                width: 24px;
+                height: 24px;
+                font-size: 18px;
+                left: -40px;
+            }
+        }
+    }
+
+    @include mobile {
+        &__item {
+            font-size: 10px;
+            margin-left: 30px;
+            &:before {
+                width: 18px;
+                height: 18px;
+                font-size: 12px;
+                left: -30px;
+            }
+        }
+    }
+}

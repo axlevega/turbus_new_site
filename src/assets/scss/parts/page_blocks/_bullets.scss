@@ -4,7 +4,14 @@
     h2, .h2 {
         text-align: center;
         display: table;
-        margin: 0 auto 81px auto;
+        margin: 0 auto 10px auto;
+    }
+    &__subtitle {
+        text-align: center;
+        display: table;
+        margin: 0 auto;
+        font-size: 18px;
+        max-width: 65vw;
     }
     &_textblock {
         display: flex;
@@ -13,7 +20,8 @@
         gap: 60px;
         align-items: flex-start;
         width: 100%;
-        margin-bottom: 93px;
+        margin-bottom: 30px;
+        margin-top: 50px;
     }
     &_text {
         flex: 0 0 35%;
@@ -45,7 +53,7 @@
         flex-wrap: nowrap;
         width: 100%;
         max-width: 1396px;
-        margin: 0 auto;
+        margin: 50px auto 0 auto;
         gap: 50px;
         justify-content: space-between;
         align-items: flex-start;
@@ -72,9 +80,9 @@
     @include smallDesktop {
         padding-top: 75px;
         padding-bottom: 75px;
-        h2, .h2 {
-            margin-bottom: 50px;
-        }
+        // h2, .h2 {
+        //     margin-bottom: 50px;
+        // }
         &_text {
             flex: 0 0 45%;
             font-size: 16px;
@@ -94,6 +102,10 @@
     }
 
     @include tablet {
+        &__subtitle {
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
         &_textblock {
             flex-wrap: wrap;
             gap: 30px;
@@ -119,9 +131,9 @@
     @include mobile {
         padding-top: 50px;
         padding-bottom: 50px;
-        h2, .h2 {
-            margin-bottom: 35px;
-        }
+        // h2, .h2 {
+        //     margin-bottom: 35px;
+        // }
         &_textblock {
             margin-bottom: 50px;
         }
@@ -149,9 +161,9 @@
     @media (max-width: 414px) {
         padding-top: 30px;
         padding-bottom: 40px;
-        h2, .h2 {
-            margin-bottom: 25px;
-        }
+        // h2, .h2 {
+        //     margin-bottom: 25px;
+        // }
         &_textblock {
             margin-bottom: 35px;
         }
