@@ -5,29 +5,27 @@
             <p>Содержание тура «Знакомство с Алтаем» вы регулируете самостоятельно: те, кто хочет расслабления и созерцания, понежатся на солнечном пляже озера Ая или отдохнут на курорте «Манжерок». <br>Для желающих большей активности, предлагаем добавить драйва и отправиться вглубь Горного Алтая: основную программу можно дополнить сплавом по реке Катунь, вояжем на внедорожнике к Каракольским озёрам и другими интересными местами.</p>
         </div>
     </div>
-    <div class="content-wrapper schedule__wrapper">
+    <div class="content-wrapper schedule__wrapper" data-tab-container>
         <div class="schedule__tabs">
-            <div class="schedule__tabs_title is-active" data-tab_target="month_tab_1">Июль 2024</div>
-            <div class="schedule__tabs_title" data-tab_target="month_tab_2">Август 2024</div>
+            <div class="schedule__tabs_title is-active" data-tab-target="month_tab_1">Июль 2024</div>
+            <div class="schedule__tabs_title" data-tab-target="month_tab_2">Август 2024</div>
         </div>
-        <div class="schedule__list is-active" data-tab_item id="month_tab_1">
+        <div class="schedule__list is-active" data-tab-content id="month_tab_1">
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    {{> schedule_item}}
-                    {{> schedule_item_2}}
-                    {{> schedule_item}}
-                    {{> schedule_item_2}}
-                    {{> schedule_item_2}}
+                    {{#each tours}}
+                        {{> schedule_item}}
+                    {{/each}}
                 </div>
                 <div class="swiper-scrollbar"></div>
             </div>
         </div>
-        <div class="schedule__list" data-tab_item id="month_tab_2">
+        <div class="schedule__list" data-tab-content id="month_tab_2">
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    {{> schedule_item_2}}
-                    {{> schedule_item}}
-                    {{> schedule_item}}
+                    {{#each (sort tours "direction" "asc")}}
+                        {{> schedule_item}}
+                    {{/each}}
                 </div>
                 <div class="swiper-scrollbar"></div>
             </div>
