@@ -106,6 +106,25 @@ const swiper_reviews_carousel = new Swiper('.reviews_carousel .swiper', {
   }
 });
 
+// Карусель с автобусами
+const swiper_buses_carousel = new Swiper('.buses__carousel .swiper', {
+  slidesPerView: 1,
+  modules: [Navigation, EffectCreative],
+  effect: "creative",
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  creativeEffect: {
+    prev: {
+      translate: [0, 0, -400],
+    },
+    next: {
+      translate: ["100%", 0, 0],
+    },
+  }
+});
+
 // Карусель с отелями
 const swiper_hotels_carousel = new Swiper('.hotels_block__carousel .swiper', {
   slidesPerView: 1,

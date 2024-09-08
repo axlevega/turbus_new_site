@@ -2,6 +2,7 @@
     {
         "day": "День 1",
         "image": "/assets/img/tour_program_image.jpg",
+        "is-active": true,
         "events": [
             {
                 "nav_title": "Прибытие и знакомство с группой",
