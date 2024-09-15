@@ -99,13 +99,18 @@ function pages() {
     .pipe(gulp.dest(dist))
 }
 
+// function replaceCssAndJs() {
+//   return gulp.src(dist + '/**/*.{html,hbs,handlebars}')
+//   .pipe($.if(PRODUCTION, gulp.src(['rev/**/*.json', 'dist/**/*.html'])))
+//   .pipe($.if(PRODUCTION, $.revCollector({
+//     replaceReved: true,
+//   })))
+//   .pipe($.if(PRODUCTION, gulp.dest(dist)))
+// }
+
 function replaceCssAndJs() {
   return gulp.src(dist + '/**/*.{html,hbs,handlebars}')
-  .pipe($.if(PRODUCTION, gulp.src(['rev/**/*.json', 'dist/**/*.html'])))
-  .pipe($.if(PRODUCTION, $.revCollector({
-    replaceReved: true,
-  })))
-  .pipe($.if(PRODUCTION, gulp.dest(dist)))
+    .pipe(gulp.dest(dist));
 }
 
 // Load updated HTML templates and partials into Panini
@@ -156,11 +161,11 @@ function sass() {
     .pipe($.if(PRODUCTION, $.purifycss([dist + '/assets/js/**/*.js', dist + '/**/*.html'])))
     .pipe($.if(PRODUCTION, $.autoprefixer(['> 1%'])))
     .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: '*' })))
-    .pipe($.if(PRODUCTION, $.rev()))
+    // .pipe($.if(PRODUCTION, $.rev()))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(dist + '/assets/css'))
-    .pipe($.if(PRODUCTION, $.rev.manifest()))
-    .pipe($.if(PRODUCTION, gulp.dest('rev/css')))
+    // .pipe($.if(PRODUCTION, $.rev.manifest()))
+    // .pipe($.if(PRODUCTION, gulp.dest('rev/css')))
     .pipe(browser.reload({ stream: true }));
 }
 
@@ -212,13 +217,12 @@ function javascript() {
     .pipe(named())
     .pipe($.sourcemaps.init())
     .pipe(webpackStream(webpackConfig, webpack2))
-    .pipe($.if(PRODUCTION, $.terser().on('error', e => { console.log(e); })
-    ))
-    .pipe($.if(PRODUCTION, $.rev()))
+    .pipe($.if(PRODUCTION, $.terser().on('error', e => { console.log(e); })))
+    // .pipe($.if(PRODUCTION, $.rev()))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(dist + '/assets/js'))
-    .pipe($.if(PRODUCTION, $.rev.manifest()))
-    .pipe($.if(PRODUCTION, gulp.dest('rev/js')))
+    // .pipe($.if(PRODUCTION, $.rev.manifest()))
+    // .pipe($.if(PRODUCTION, gulp.dest('rev/js')))
 }
 
 
