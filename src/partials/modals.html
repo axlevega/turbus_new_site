@@ -1,8 +1,65 @@
-<div class = "global_backdrop" id = "backdrop"></div>
+<div class="modal__backdrop" id="modalBackdrop"></div>
 
+<!-- Бронирование -->
+<div class="modal modal__book" id="modalBook">
+  <div class="modal__close" data-close></div>
+  <div class="modal__wrapper">
+    <div class="modal__header">
+      <p class="h2">Бронирование тура</p>
+    </div>
 
+    <div class="modal__tabs" data-tab-container>
+      <div class="modal__tabs_nav">
+        <div class="modal__tabs_nav_item modal__tabs_nav_item-filled is-active" data-tab-target="modal_book_tab_1">
+          <span>Данные</span>
+        </div>
+        <div class="modal__tabs_nav_item" data-tab-target="modal_book_tab_2">
+          <span>Бронируемый тур</span>
+        </div>
+        <div class="modal__tabs_nav_item" data-tab-target="modal_book_tab_3">
+          <span>Способ оплаты</span>
+        </div>
+        <div class="modal__tabs_nav_item" data-tab-target="modal_book_tab_4">
+          <span>Соглашения</span>
+        </div>
+      </div>
+      <div class="modal__tabs_content">
 
-<div class = "modal" id = "modalWindow">
-  <div data-close = "">Лень вставлять изображение крестика, при клике сюда модалка закрывается, т.к. стоит параметр data-close, при котором модалка закрывается если она родитель этого элемента</div>
-  Модалка
+        <div class="modal__tabs_item is-active" data-tab-content id="modal_book_tab_1">
+          {{> field_text name="name" title="Как вас зовут?" placeholder="Укажите ФИО"}}
+          {{> field_date name="birthdate" title="Дата вашего рождения"}}
+          {{> field_text name="phone" title="Номер вашего телефона"}}
+          {{> field_text name="email" title="Ваш электронный адрес"}}
+        </div>
+
+        <div class="modal__tabs_item" data-tab-content id="modal_book_tab_2">
+          {{> field_select name="direction" title="Направление тура" placeholder="Выберите направление"}}
+          {{> field_select name="tour" title="Дата тура" placeholder="Выберите тур"}}
+          {{> field_select name="hotel" title="Гостиница и номер" placeholder="Выберите гостиницу и номер"}}
+          {{> field_number name="count" title="Количество человек" placeholder="1" value="1" description="Укажите общее количество туристов, включая вас"}}
+        </div>
+
+        <div class="modal__tabs_item" data-tab-content id="modal_book_tab_3">
+          {{> field_textarea name="comment" placeholder="Оставьте комментарий"}}
+          <div class="modal__radio_wrapper">
+            <p class="modal__radio_wrapper_title">Способы оплаты:</p>
+            {{> field_radio name="payment" title="Наличными" value="Наличными"}}
+            {{> field_radio name="payment" title="Картой в офисе" value="Картой в офисе" checked=true}}
+            {{> field_radio name="payment" title="Переводом" value="Переводом"}}
+          </div>
+        </div>
+
+        <div class="modal__tabs_item" data-tab-content id="modal_book_tab_4">
+          <div class="modal__checkbox_wrapper">
+            {{> field_checkbox name="terms[]" title="Нажимая кнопку \"Забронировать\" я соглашаюсь с договором на оказание услуг и даю согласие <a href=\"#\" target=\"_target\" >на обработку персональных данных</a>."}}
+            {{> field_checkbox name="terms[]" title="Я предупрежден(а) о возможности приобретения дополнительной страховки, а также об <a href=\"#\" target=\"_target\" >условиях и правилах ее использования.</a>"}}
+            {{> field_checkbox name="terms[]" title="Я ознакомлен(а) с <a href=\"#\" target=\"_target\" >условиями бронирования</a>."}}
+            {{> field_checkbox name="terms[]" title="Я ознакомлен(а) с <a href=\"#\" target=\"_target\" >важной информацией о бронировании</a>."}}
+            {{> field_checkbox name="terms[]" title="Я понимаю, что заполнение данной заявки не гарантирует бронь тура за мной."}}
+          </div>
+          <div class="btn btn__filled">Забронировать</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

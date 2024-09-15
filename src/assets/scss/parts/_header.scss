@@ -4,6 +4,8 @@
     padding-top: 12px;
     padding-bottom: 12px;
     height: var(--header-height);
+    z-index: 200;
+    position: relative;
     >.content-wrapper {
         display: flex;
         justify-content: space-between;

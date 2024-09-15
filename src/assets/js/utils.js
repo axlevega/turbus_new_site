@@ -7,8 +7,9 @@ $("[data-open]").on("click", function () {
   if ($(this).hasClass("header_burger")) {
     $(".header").toggleClass("is-active");
   }
-  if ($(this).hasClass("with-backdrop")) {
-    $("#backdrop").toggleClass("is-active");
+  
+  if ('show_backdrop' in $(this).data()){
+    $("#modalBackdrop").toggleClass("is-active");
   }
   $("#" + $(this).data("open")).toggleClass("is-active");
   if ($(this).data("fill")) {
@@ -22,7 +23,7 @@ $("[data-close]").on("click", function () {
     $(`#${$(this).data("close")}`).removeClass("is-active");
   } else {
     $(this).closest(".modal").removeClass("is-active");
-    $("#backdrop").removeClass("is-active");
+    $("#modalBackdrop").removeClass("is-active");
   }
 });
 
@@ -30,7 +31,7 @@ $('[data-close-closest]').on('click', function() {
   $(this).closest('.is-active').removeClass('is-active');
 });
 
-$("#backdrop").on("click", function () {
+$("#modalBackdrop").on("click", function () {
   $(this).removeClass("is-active");
   $(".modal.is-active").removeClass("is-active");
 });
