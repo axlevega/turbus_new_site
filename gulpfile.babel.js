@@ -158,7 +158,7 @@ function sass() {
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.sass().on('error', $.sass.logError))
-    .pipe($.if(PRODUCTION, $.purifycss([dist + '/assets/js/**/*.js', dist + '/**/*.html'])))
+    // .pipe($.if(PRODUCTION, $.purifycss([dist + '/assets/js/**/*.js', dist + '/**/*.html'])))
     .pipe($.if(PRODUCTION, $.autoprefixer(['> 1%'])))
     .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: '*' })))
     // .pipe($.if(PRODUCTION, $.rev()))
