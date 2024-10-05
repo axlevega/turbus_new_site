@@ -18,12 +18,15 @@
             padding: 31px 10px;
             line-height: 1;
             white-space: nowrap;
-            &.is-active {
-                font-weight: 400;
-                text-decoration: underline;
-            }
             &:hover {
                 background-color: rgb(20, 20, 20);
+            }
+            &.is-active {
+                font-weight: 400;
+                background: #1aa4b1;
+                &:hover {
+                    background-color: #0f8792;
+                }
             }
         }
     }

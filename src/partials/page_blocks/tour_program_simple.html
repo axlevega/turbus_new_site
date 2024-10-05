@@ -1,0 +1,35 @@
+<section class="tour_program" data-tab-container>
+    <div class="tour_program__nav">
+        {{#each programs_simple}}
+        <div class="tour_program__nav_item {{#if is-active}}is-active{{/if}}"
+            data-tab-target="tour_day_{{increment @index}}">{{day}}</div>
+        {{/each}}
+    </div>
+    <div class="tour_program__content">
+        {{#each programs_simple}}
+        <div class="tour_program__day {{#if is-active}}is-active{{/if}}" data-tab-content
+            id="tour_day_{{increment @index}}">
+            <div class="tour_program__day_content">
+                <div class="content-wrapper">
+                    <div class="tour_program__day_event is-active">
+                        <p class="tour_program__day_event_title">{{increment @index}}. {{title}}</p>
+                        <p class="tour_program__day_event_subtitle">{{subtitle}}</p>
+                        <div class="tour_program__day_event_description">
+                            {{{description}}}
+                        </div>
+                    </div>
+                    <!-- <div class="tour_program__day_nav">
+                        <div class="tour_program__day_nav_prev tour_program__day_nav_icon" data-tab-target="tour_day_{{@index}}"></div>
+                        <div class="tour_program__day_nav_next tour_program__day_nav_icon"></div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="tour_program__day_images">
+                <div class="tour_program__day_image is-active">
+                    <img src="{{image}}" alt="{{title}}">
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</section>
