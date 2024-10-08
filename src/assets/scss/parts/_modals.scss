@@ -90,10 +90,15 @@
         padding-left: 38px;
         counter-increment: tab_count;
         cursor: pointer;
+        &.disabled {
+          cursor: default;
+          pointer-events: none;
+          opacity: .45;
+        }
         &:before {
           position: absolute;
           content: counter(tab_count);
-          background-color: #A9A9A9;
+          background-color: #999999;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -133,6 +138,18 @@
       &.is-active {
         display: flex;
       }
+    }
+  }
+
+  &__participant {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    &_title {
+      color: var(--color-main-blue);
+      margin: 10px 0;
+      font-weight: 500;
+      font-size: 20px;
     }
   }
 

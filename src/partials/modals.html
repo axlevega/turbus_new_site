@@ -26,38 +26,39 @@
       <div class="modal__tabs_content">
 
         <div class="modal__tabs_item is-active" data-tab-content id="modal_book_tab_1">
-          {{> field_text name="name" title="Как вас зовут?" placeholder="Укажите ФИО"}}
-          {{> field_date name="birthdate" title="Дата вашего рождения"}}
-          {{> field_text name="phone" title="Номер вашего телефона"}}
-          {{> field_text name="email" title="Ваш электронный адрес"}}
+          {{> field_text name="name" title="Как вас зовут?" placeholder="Укажите ФИО" required=true}}
+          {{> field_date name="birthdate" title="Дата вашего рождения" required=true}}
+          {{> field_text name="phone" title="Номер вашего телефона" required=true}}
+          {{> field_text name="email" title="Ваш электронный адрес" required=true}}
         </div>
 
         <div class="modal__tabs_item" data-tab-content id="modal_book_tab_2">
-          {{> field_select name="direction" title="Направление тура" placeholder="Выберите направление"}}
-          {{> field_select name="tour" title="Дата тура" placeholder="Выберите тур"}}
-          {{> field_select name="hotel" title="Гостиница и номер" placeholder="Выберите гостиницу и номер"}}
-          {{> field_number name="count" title="Количество человек" placeholder="1" value="1" description="Укажите общее количество туристов, включая вас"}}
+          {{> field_select name="direction" title="Направление тура" placeholder="Выберите направление" required=true}}
+          {{> field_select name="tour" title="Дата тура" placeholder="Выберите тур" required=true}}
+          {{> field_select name="hotel" title="Гостиница и номер" placeholder="Выберите гостиницу и номер" required=true}}
+          {{> field_number name="count" title="Количество человек" placeholder="1" value="1" description="Укажите общее количество туристов, включая вас" required=true}}
+          <div id="participant_container" class="modal__participant"></div>
         </div>
 
         <div class="modal__tabs_item" data-tab-content id="modal_book_tab_3">
           {{> field_textarea name="comment" placeholder="Оставьте комментарий"}}
           <div class="modal__radio_wrapper">
             <p class="modal__radio_wrapper_title">Способы оплаты:</p>
-            {{> field_radio name="payment" title="Наличными" value="Наличными"}}
-            {{> field_radio name="payment" title="Картой в офисе" value="Картой в офисе" checked=true}}
-            {{> field_radio name="payment" title="Переводом" value="Переводом"}}
+            {{> field_radio name="payment" title="Наличными" value="Наличными" required=true}}
+            {{> field_radio name="payment" title="Картой в офисе" value="Картой в офисе" checked=true required=true}}
+            {{> field_radio name="payment" title="Переводом" value="Переводом" required=true}}
           </div>
         </div>
 
         <div class="modal__tabs_item" data-tab-content id="modal_book_tab_4">
           <div class="modal__checkbox_wrapper">
-            {{> field_checkbox name="terms[]" title="Нажимая кнопку \"Забронировать\" я соглашаюсь с договором на оказание услуг и даю согласие <a href=\"#\" target=\"_target\" >на обработку персональных данных</a>."}}
-            {{> field_checkbox name="terms[]" title="Я предупрежден(а) о возможности приобретения дополнительной страховки, а также об <a href=\"#\" target=\"_target\" >условиях и правилах ее использования.</a>"}}
-            {{> field_checkbox name="terms[]" title="Я ознакомлен(а) с <a href=\"#\" target=\"_target\" >условиями бронирования</a>."}}
-            {{> field_checkbox name="terms[]" title="Я ознакомлен(а) с <a href=\"#\" target=\"_target\" >важной информацией о бронировании</a>."}}
-            {{> field_checkbox name="terms[]" title="Я понимаю, что заполнение данной заявки не гарантирует бронь тура за мной."}}
+            {{> field_checkbox name="terms[]" title="Нажимая кнопку \"Забронировать\" я соглашаюсь с договором на оказание услуг и даю согласие <a href=\"#\" target=\"_target\" >на обработку персональных данных</a>." required=true}}
+            {{> field_checkbox name="terms[]" title="Я предупрежден(а) о возможности приобретения дополнительной страховки, а также об <a href=\"#\" target=\"_target\" >условиях и правилах ее использования.</a>" required=true}}
+            {{> field_checkbox name="terms[]" title="Я ознакомлен(а) с <a href=\"#\" target=\"_target\" >условиями бронирования</a>." required=true}}
+            {{> field_checkbox name="terms[]" title="Я ознакомлен(а) с <a href=\"#\" target=\"_target\" >важной информацией о бронировании</a>." required=true}}
+            {{> field_checkbox name="terms[]" title="Я понимаю, что заполнение данной заявки не гарантирует бронь тура за мной." required=true}}
           </div>
-          <div class="btn btn__filled">Забронировать</div>
+          <div class="btn btn__filled" id="modalSendOrder">Забронировать</div>
         </div>
       </div>
     </div>

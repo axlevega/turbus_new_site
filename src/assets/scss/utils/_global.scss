@@ -265,6 +265,11 @@ h2, .h2 {
   cursor: pointer;
   text-transform: uppercase;
   font-size: 29px;
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+    filter: grayscale(1)
+  }
   &__framed {
     font-weight: 400;
     border-color: var(--color-main-blue);
