@@ -372,6 +372,12 @@ textarea {
   &:focus {
     border-color: var(--color-main-blue);
   }
+
+  @include tablet {
+    font-size: 14px;
+    height: 44px;
+    padding: 0 18px;
+  }
 }
 
 select {
@@ -490,6 +496,51 @@ textarea {
       }
     }
   }
+
+  @include tablet {
+    &__title {
+      font-size: 16px;
+    }
+    &__radio,
+    &__checkbox {
+      .field__title {
+        font-size: 14px;
+        padding-left: 28px;
+        &:before {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    &__radio {
+      .field__title {
+        text-align: center;
+        font-size: 12px;
+        padding-left: 0;
+        &:before {
+          width: 20px;
+          height: 20px;
+          left: 50%;
+          top: 0;
+          transform: translate(-50%, -110%);
+        }
+      }
+    }
+    &__checkbox {
+      .field__title {
+        font-size: 12px;
+        &:before {
+          width: 20px;
+          height: 20px;
+          top: 5px;
+        }
+      }
+    }
+  }
+
 }
 
 
