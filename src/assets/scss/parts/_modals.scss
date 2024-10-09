@@ -196,6 +196,43 @@
     max-width: 720px;
   }
 
+  &__menu {
+    background-color: black;
+    top: var(--header-height);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none !important;
+    .modal__wrapper {
+      height: 100%;
+    }
+    &_wrap {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+    }
+    &_nav {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: var(--font-headers);
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
   @include tablet {
     &__wrapper {
       padding: 35px 5vw;

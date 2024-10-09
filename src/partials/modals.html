@@ -1,5 +1,26 @@
 <div class="modal__backdrop" id="modalBackdrop"></div>
 
+<!-- Мобильное меню -->
+<div class="modal modal__menu" id="modalMenu">
+  <div class="modal__wrapper">
+    <div class="modal__menu_wrap">
+      <nav class="modal__menu_nav">
+        <ul>
+          <li><a href="#">Все направления</a></li>
+          <li><a href="#">Индивидуальные туры</a></li>
+          <li><a href="#">О компании</a></li>
+          <li><a href="#">Дополнительные услуги</a></li>
+          <li><a href="#">Информация</a></li>
+          <li><a href="#">Отзывы</a></li>
+        </ul>
+      </nav>
+      <div class="modal__menu_btns">
+        <a class="btn btn__framed" href="tel:89509735491">+7 (950) 973 - 54 - 91</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Бронирование -->
 <div class="modal modal__book" id="modalBook">
   <div class="modal__close" data-close></div>
@@ -35,7 +56,8 @@
         <div class="modal__tabs_item" data-tab-content id="modal_book_tab_2">
           {{> field_select name="direction" title="Направление тура" placeholder="Выберите направление" required=true}}
           {{> field_select name="tour" title="Дата тура" placeholder="Выберите тур" required=true}}
-          {{> field_select name="hotel" title="Гостиница и номер" placeholder="Выберите гостиницу и номер" required=true}}
+          {{> field_select name="hotel" title="Гостиница и номер" placeholder="Выберите гостиницу и номер"
+          required=true}}
           {{> field_number name="count" title="Количество человек" placeholder="1" value="1" description="Укажите общее количество туристов, включая вас" required=true}}
           <div id="participant_container" class="modal__participant"></div>
         </div>
@@ -52,10 +74,12 @@
 
         <div class="modal__tabs_item" data-tab-content id="modal_book_tab_4">
           <div class="modal__checkbox_wrapper">
-            {{> field_checkbox name="terms[]" title="Нажимая кнопку \"Забронировать\" я соглашаюсь с договором на оказание услуг и даю согласие <a href=\"#\" target=\"_target\" >на обработку персональных данных</a>." required=true}}
-            {{> field_checkbox name="terms[]" title="Я предупрежден(а) о возможности приобретения дополнительной страховки, а также об <a href=\"#\" target=\"_target\" >условиях и правилах ее использования.</a>" required=true}}
-            {{> field_checkbox name="terms[]" title="Я ознакомлен(а) с <a href=\"#\" target=\"_target\" >условиями бронирования</a>." required=true}}
-            {{> field_checkbox name="terms[]" title="Я ознакомлен(а) с <a href=\"#\" target=\"_target\" >важной информацией о бронировании</a>." required=true}}
+            {{> field_checkbox name="terms[]" title="Нажимая кнопку \"Забронировать\" я соглашаюсь с договором на оказание услуг и даю согласие <a href=\"#\" target=\"_target\">на обработку персональных данных</a>."
+            required=true}}
+            {{> field_checkbox name="terms[]" title="Я предупрежден(а) о возможности приобретения дополнительной страховки, а также об <a href=\"#\" target=\"_target\">условиях и правилах ее использования.</a>"
+            required=true}}
+            {{> field_checkbox name="terms[]" title="Я ознакомлен(а) с <a href=\"#\" target=\"_target\">условиями бронирования</a>." required=true}}
+            {{> field_checkbox name="terms[]" title="Я ознакомлен(а) с <a href=\"#\" target=\"_target\">важной информацией о бронировании</a>." required=true}}
             {{> field_checkbox name="terms[]" title="Я понимаю, что заполнение данной заявки не гарантирует бронь тура за мной." required=true}}
           </div>
           <div class="btn btn__filled" id="modalSendOrder">Забронировать</div>
@@ -66,7 +90,7 @@
 </div>
 
 <!-- Успех успешный -->
- <div class="modal modal__success" id="modalSuccess">
+<div class="modal modal__success" id="modalSuccess">
   <div class="modal__close" data-close></div>
   <div class="modal__wrapper">
     <div class="modal__header">
@@ -79,4 +103,4 @@
         по выходным <b>с 11:00 до 18:00</b> (по Красноярскому времени).</p>
     </div>
   </div>
- </div>
+</div>

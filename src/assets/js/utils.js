@@ -4,13 +4,14 @@ $("[data-open]").on("click", function () {
   if ($(this).hasClass("self-active")) {
     $(this).toggleClass("is-active");
   }
-  if ($(this).hasClass("header_burger")) {
-    $(".header").toggleClass("is-active");
+  if ($(this).hasClass("btn__burger")) {
+    $(this).toggleClass("is-active");
   }
   
   if ('show_backdrop' in $(this).data()){
     $("#modalBackdrop").toggleClass("is-active");
   }
+
   $("#" + $(this).data("open")).toggleClass("is-active");
   if ($(this).data("fill")) {
     $(`#${$(this).data("open")} #${$(this).data("fill")}`).val($(this).data("value"));

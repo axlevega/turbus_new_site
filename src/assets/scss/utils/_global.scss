@@ -302,6 +302,21 @@ h2, .h2 {
       &:nth-of-type(2) {width: 100%;}
       &:nth-of-type(3) {width: 40%;}
     }
+    &.is-active {
+      >div {
+        &:nth-of-type(1) {
+          width: 100%;
+          transform: rotate(45deg) translateX(3px) translateY(3px);
+          transform-origin: center;
+        }
+        &:nth-of-type(2) {width: 0%;}
+        &:nth-of-type(3) {
+          width: 100%;
+          transform: rotate(-45deg) translateY(-4px) translateX(4px);
+          transform-origin: center;
+        }
+      }
+    }
   }
 
   &__gray {
@@ -414,7 +429,6 @@ textarea {
     font-weight: 400;
     color: #696969;
   }
-
   &__radio,
   &__checkbox {
     line-height: 1;
