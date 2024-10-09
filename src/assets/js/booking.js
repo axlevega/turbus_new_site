@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     if (document.getElementById('modalBook')) {
         // Обработчик табов в модалке
-        document.querySelectorAll('#modalBook .modal__tabs_nav_item').forEach(function(tabItem) {
+        document.querySelectorAll('#modalBook .modal__tabs_nav_item').forEach(function (tabItem) {
             tabItem.addEventListener('click', function () {
                 var index = Array.from(document.querySelectorAll('#modalBook .modal__tabs_nav_item')).indexOf(this);
 
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Заполнение формы демо-данными при загрузке страницы
-    fillFormWithDemoData();
+    // fillFormWithDemoData();
 
     // Проверка состояния чекбоксов для разблокировки кнопки отправки
     function checkSubmitButtonState() {
@@ -210,18 +210,103 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 body: JSON.stringify(bookingData)
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert('Бронирование успешно создано!');
-                } else {
-                    alert('Ошибка при создании бронирования: ' + (data.error || 'Неизвестная ошибка'));
-                }
-            })
-            .catch(error => {
-                console.error('Ошибка при отправке данных:', error);
-                alert('Произошла ошибка при отправке данных на сервер. Пожалуйста, попробуйте снова позже.');
-            });
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Бронирование успешно создано!');
+                    } else {
+                        alert('Ошибка при создании бронирования: ' + (data.error || 'Неизвестная ошибка'));
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка при отправке данных:', error);
+                    alert('Произошла ошибка при отправке данных на сервер. Пожалуйста, попробуйте снова позже.');
+                });
         });
     }
+
+
+
+
+    // Получаем данные направления, туров и гостиниц через AJAX
+    let directionsData = [];
+
+    fetch('https://dev.turbusgesh.ru/booking/api/get_select_data.php')
+        .then(response => response.json())
+        .then(data => {
+            directionsData = data;
+            const fieldDirection = document.getElementById('field_direction');
+            const fieldTour = document.getElementById('field_tour');
+            const fieldHotel = document.getElementById('field_hotel');
+
+            // Заполняем список направлений
+            directionsData.forEach(direction => {
+                const option = document.createElement('option');
+                option.value = direction.id;
+                option.textContent = direction.title;
+                fieldDirection.appendChild(option);
+            });
+
+            // Обработка выбора направления
+            fieldDirection.addEventListener('change', function () {
+                const selectedDirectionId = parseInt(this.value);
+                const selectedDirection = directionsData.find(direction => direction.id === selectedDirectionId);
+
+                // Очищаем список туров и гостиниц
+                fieldTour.innerHTML = '<option selected disabled value="">Выберите тур</option>';
+                fieldHotel.innerHTML = '<option selected disabled value="">Выберите гостиницу</option>';
+
+                if (selectedDirection) {
+                    // Заполняем список туров в зависимости от выбранного направления с использованием optgroup
+                    Object.keys(selectedDirection.tours).forEach(month => {
+                        const optgroup = document.createElement('optgroup');
+                        optgroup.label = month;
+
+                        selectedDirection.tours[month].forEach(tour => {
+                            const option = document.createElement('option');
+                            option.value = tour.id;
+                            option.textContent = tour.title;
+                            optgroup.appendChild(option);
+                        });
+
+                        fieldTour.appendChild(optgroup);
+                    });
+                }
+            });
+
+            // Обработка выбора тура
+            fieldTour.addEventListener('change', function () {
+                const selectedTourId = parseInt(this.value);
+                const selectedDirectionId = parseInt(fieldDirection.value);
+                const selectedDirection = directionsData.find(direction => direction.id === selectedDirectionId);
+
+                // Очищаем список гостиниц
+                fieldHotel.innerHTML = '<option value="">Выберите гостиницу</option>';
+
+                if (selectedDirection) {
+                    // Находим выбранный тур
+                    let selectedTour;
+                    Object.keys(selectedDirection.tours).forEach(month => {
+                        selectedDirection.tours[month].forEach(tour => {
+                            if (tour.id === selectedTourId) {
+                                selectedTour = tour;
+                            }
+                        });
+                    });
+
+                    // Заполняем список гостиниц в зависимости от выбранного тура
+                    if (selectedTour) {
+                        selectedTour.hotels.forEach(hotel => {
+                            const option = document.createElement('option');
+                            option.value = hotel.id;
+                            option.textContent = hotel.title;
+                            fieldHotel.appendChild(option);
+                        });
+                    }
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching directions data:', error);
+        });
 });
