@@ -185,4 +185,15 @@
     min-height: 600px;
   }
 
+  &__content {
+    font-size: 18px;
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__success {
+    max-width: 720px;
+  }
+
 }

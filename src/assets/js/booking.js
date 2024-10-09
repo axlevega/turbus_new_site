@@ -183,8 +183,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 birth_date: document.getElementById('fld_birthdate').value,
                 phone: document.getElementById('fld_phone').value,
                 email: document.getElementById('fld_email').value,
-                tour: document.getElementById('field_tour').value,
-                hotel_info: document.getElementById('field_hotel').value,
+                // tour: document.getElementById('field_tour').value,
+                // hotel_info: document.getElementById('field_hotel').value,
+                tour: document.getElementById('field_tour').selectedOptions[0]?.text || '', // тащим в заявку текст, а не значение option
+                hotel_info: document.getElementById('field_hotel').selectedOptions[0]?.text || '', // тащим в заявку текст, а не значение option
                 total_people: parseInt(document.getElementById('fld_count').value, 10),
                 payment_method: document.querySelector('input[name="payment"]:checked').value,
                 comment: document.getElementById('field_comment').value,
@@ -213,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        alert('Бронирование успешно создано!');
+                        resetFormAndShowSuccess();
                     } else {
                         alert('Ошибка при создании бронирования: ' + (data.error || 'Неизвестная ошибка'));
                     }
@@ -225,8 +227,32 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Функция для очистки всех полей формы и отображения сообщения об успешном бронировании
+    function resetFormAndShowSuccess() {
+        // Очистка всех полей формы
+        document.querySelectorAll('#modalBook input, #modalBook select, #modalBook textarea').forEach(function (input) {
+            if (input.type === 'checkbox' || input.type === 'radio') {
+                input.checked = false;
+            } else {
+                input.value = '';
+            }
+        });
 
+        // Очистка дополнительных полей участников
+        updateParticipantFields(1);
 
+        // Закрытие модального окна бронирования
+        var modalBook = document.getElementById('modalBook');
+        if (modalBook) {
+            modalBook.classList.remove('is-active');
+        }
+
+        // Открытие окна с успешным бронированием
+        var modalSuccess = document.getElementById('modalSuccess');
+        if (modalSuccess) {
+            modalSuccess.classList.add('is-active');
+        }
+    }
 
     // Получаем данные направления, туров и гостиниц через AJAX
     let directionsData = [];
