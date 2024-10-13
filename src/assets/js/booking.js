@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Отправка данных на сервер
-            fetch('https://dev.turbusgesh.ru/booking/api/tour_booking.php?action=create', {
+            fetch('https://turbusgesh.ru/booking/api/tour_booking.php?action=create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Получаем данные направления, туров и гостиниц через AJAX
     let directionsData = [];
 
-    fetch('https://dev.turbusgesh.ru/booking/api/get_select_data.php')
+    fetch('https://turbusgesh.ru/booking/api/get_select_data.php')
         .then(response => response.json())
         .then(data => {
             directionsData = data;
