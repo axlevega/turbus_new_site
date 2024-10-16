@@ -144,6 +144,31 @@ const swiper_hotels_carousel = new Swiper('.hotels_block__carousel .swiper', {
   }
 });
 
+// Карусель с номерами
+const swiper_rooms_carousel = new Swiper('.rooms__carousel .swiper', {
+  slidesPerView: 1,
+  modules: [Navigation],
+  navigation: {
+    nextEl: '.rooms__carousel_navigation .swiper-button-next',
+    prevEl: '.rooms__carousel_navigation .swiper-button-prev',
+  },
+  allowTouchMove: false,
+});
+
+// Карусель с фотографиями номера
+const swiper_rooms_gallery_carousel = new Swiper('.rooms_gallery__carousel .swiper', {
+  slidesPerView: 1,
+  modules: [Pagination],
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  }
+  // navigation: {
+  //   nextEl: '.swiper-button-next',
+  //   prevEl: '.swiper-button-prev',
+  // }
+});
+
 // Карусель с ценностями
 const swiper_values_carousel = new Swiper('.values_carousel .swiper', {
   slidesPerView: 2,
@@ -203,12 +228,16 @@ const swiper_team_carousel = new Swiper('.team_carousel .swiper', {
 // Карусель с карточками туров в направлении
 const swiper_tours_carousel = new Swiper('.schedule__list .swiper', {
   slidesPerView: 4,
-  modules: [Scrollbar],
+  modules: [Scrollbar, Navigation],
   observer: true,
   spaceBetween: 20,
   observeParents: true,
   scrollbar: {
     el: '.swiper-scrollbar',
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
   breakpoints: {
     300: {

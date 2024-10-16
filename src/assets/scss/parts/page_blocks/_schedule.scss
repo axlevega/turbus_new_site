@@ -15,6 +15,7 @@
     }
     &__list {
         display: none;
+        position: relative;
         .swiper {
             padding-bottom: 50px;
             width: 100%;
@@ -27,6 +28,12 @@
                     background: var(--color-main-blue);
                     border-radius: 0;
                 }
+            }
+            &-button-prev {
+                left: -35px;
+            }
+            &-button-next {
+                right: -35px;
             }
         }
         &.is-active {
@@ -129,7 +136,7 @@
             text-transform: uppercase;
             font-family: var(--font-headers);
             font-size: 29px;
-            font-weight: 500;
+            font-weight: 300;
             flex: 0 0 56px;
             justify-content: center;
             align-items: center;
@@ -150,6 +157,12 @@
                 background-color: var(--color-main-blue);
             }
         }
+    }
+    &__navigation {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
     }
 
     @include notebook {
@@ -240,6 +253,11 @@
     @include mobile {
         &__list {
             gap: 10px;
+            .swiper {
+                &-scrollbar {
+                    bottom: -50px;
+                }
+            }
         }
         &__item {
             &_content {
@@ -263,6 +281,12 @@
             &_title {
                 font-size: 12px;
             }
+        }
+        &__navigation {
+            top: 95%;
+            left: 50%;
+            right: initial;
+            // transform: translateX(-50%) translateY(-30%);
         }
     }
 

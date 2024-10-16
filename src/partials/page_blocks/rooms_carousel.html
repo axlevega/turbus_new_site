@@ -1,0 +1,20 @@
+<div class="rooms">
+    <div class="content-wrapper">
+        <h2>Гостиница «Тайга»</h2>
+        <div class="rooms__carousel_navigation_wrapper">
+            <div class="rooms__carousel_navigation">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        <div class="rooms__carousel">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    {{#each rooms}}
+                        {{> rooms_carousel_item}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

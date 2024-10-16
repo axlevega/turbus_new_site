@@ -1,0 +1,73 @@
+.rooms {
+    h2, .h2 {
+        margin-bottom: 20px;
+    }
+    &__carousel {
+        margin-top: -25px;
+        >.swiper {
+
+        }
+        &_navigation {
+            position: relative;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 10px;
+            align-items: center;
+            height: 30px;
+            &_wrapper {
+                position: relative;
+                .swiper {
+                    &-button-prev,
+                    &-button-next {
+                        position: relative;
+                        left: initial;
+                        right: initial;
+                    }
+                }
+            }
+        }
+    }
+    &__item {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+        &_header {
+            font-size: 22px;
+            font-weight: 500;
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 20px;
+        }
+        &_left {
+            flex: 0 0 calc(50% - 15px);
+            width: calc(50% - 15px);
+            max-width: calc(50% - 15px);
+        }
+        &_right {
+            flex: 0 0 calc(50% - 15px);
+            width: calc(50% - 15px);
+            max-width: calc(50% - 15px);
+            .swiper {
+                &-wrapper {
+                    padding-bottom: 20px;
+                }
+                &-pagination {
+                    z-index: 100;
+                    bottom: 0px;
+                }
+            }
+        }
+    }
+
+    @include tablet {
+        &__item {
+            flex-wrap: wrap;
+            &_left,
+            &_right {
+                flex: 0 0 100%;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}

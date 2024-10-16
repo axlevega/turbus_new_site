@@ -1,0 +1,26 @@
+<div class="swiper-slide rooms__item">
+    <div class="rooms__item_left">
+        <div class="rooms__item_header">
+            <p class="rooms__item_name">{{name}}</p>
+        </div>
+        <div class="rooms__item_text">
+            {{{description}}}
+        </div>
+    </div>
+    <div class="rooms__item_right">
+        <div class="rooms_gallery__carousel">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    {{#each images}}
+                        <div class="swiper-slide rooms__item_image">
+                            <a href="{{image}}" data-fancybox="rooms">
+                                <img src="{{image}}">
+                            </a>
+                        </div>
+                    {{/each}}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>
