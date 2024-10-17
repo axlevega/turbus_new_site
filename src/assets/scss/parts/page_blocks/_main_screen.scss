@@ -40,6 +40,41 @@
             line-height: 1;
         }
     }
+    &__links {
+        display: flex;
+        justify-content: center;
+        gap: 35px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        &_item {
+            color: white;
+            position: relative;
+            padding-left: 18px;
+            &::before {
+                position: absolute;
+                content: '';
+                width: 12px;
+                height: 15px;
+                display: block;
+                background: url('../img/icons/ic_location_direct.svg') no-repeat center;
+                background-size: contain;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                filter: brightness(2) grayscale(1);
+            }
+            &-active {
+                font-weight: 500;
+                text-decoration: underline;
+                &:before {
+                    filter: none;
+                }
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
     &_buttons {
         display: flex;
         flex-wrap: wrap;
