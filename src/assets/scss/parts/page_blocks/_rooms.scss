@@ -6,6 +6,7 @@
         display: flex;
         gap: 15px;
         margin-bottom: 20px;
+        overflow-x: scroll;
     }
     &__tab {
         &_name {
@@ -16,6 +17,7 @@
             position: relative;
             padding-left: 20px;
             cursor: pointer;
+            white-space: nowrap;
             &:before {
                 position: absolute;
                 content: '';
