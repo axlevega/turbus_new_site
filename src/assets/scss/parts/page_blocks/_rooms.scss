@@ -2,6 +2,73 @@
     h2, .h2 {
         margin-bottom: 20px;
     }
+    &__nav {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    &__tab {
+        &_name {
+            font-size: 22px;
+            font-weight: 500;
+        }
+        &_title {
+            position: relative;
+            padding-left: 20px;
+            cursor: pointer;
+            &:before {
+                position: absolute;
+                content: '';
+                width: 16px;
+                height: 16px;
+                display: block;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background: url('../img/icons/ic_home.svg') no-repeat center;
+                background-size: contain;
+                filter: brightness(1) grayscale(1);
+            }
+            &.is-active {
+                font-weight: 500;
+                text-decoration: underline;
+                color: var(--color-main-blue);
+                &:before {
+                    filter: none;
+                }
+            }
+        }
+        &_container {
+            display: none;
+            flex-wrap: nowrap;
+            gap: 20px;
+            justify-content: space-between;
+            &.is-active {
+                display: flex;
+            }
+        }
+        &_content {
+            flex: 0 0 calc(40% - 15px);
+            width: calc(40% - 15px);
+            max-width: calc(40% - 15px);
+        }
+        &_gallery {
+            flex: 0 0 calc(60% - 15px);
+            width: calc(60% - 15px);
+            max-width: calc(60% - 15px);
+            .swiper {
+                &-wrapper {
+                    padding-bottom: 20px;
+                }
+                &-pagination {
+                    z-index: 100;
+                    bottom: 0px;
+                }
+            }
+        }
+    }
+
+
     &__carousel {
         margin-top: -25px;
         >.swiper {
@@ -27,43 +94,69 @@
             }
         }
     }
-    &__item {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 20px;
-        &_header {
-            font-size: 22px;
-            font-weight: 500;
-            position: relative;
-            padding-left: 60px;
-            margin-bottom: 20px;
-        }
-        &_left {
-            flex: 0 0 calc(50% - 15px);
-            width: calc(50% - 15px);
-            max-width: calc(50% - 15px);
-        }
-        &_right {
-            flex: 0 0 calc(50% - 15px);
-            width: calc(50% - 15px);
-            max-width: calc(50% - 15px);
-            .swiper {
-                &-wrapper {
-                    padding-bottom: 20px;
-                }
-                &-pagination {
-                    z-index: 100;
-                    bottom: 0px;
-                }
-            }
-        }
-    }
+    // &__item {
+    //     display: flex;
+    //     flex-wrap: nowrap;
+    //     gap: 20px;
+    //     &_header {
+    //         font-size: 22px;
+    //         font-weight: 500;
+    //         position: relative;
+    //         padding-left: 60px;
+    //         margin-bottom: 20px;
+    //     }
+    //     &_left {
+    //         flex: 0 0 calc(50% - 15px);
+    //         width: calc(50% - 15px);
+    //         max-width: calc(50% - 15px);
+    //     }
+    //     &_right {
+    //         flex: 0 0 calc(50% - 15px);
+    //         width: calc(50% - 15px);
+    //         max-width: calc(50% - 15px);
+    //         .swiper {
+    //             &-wrapper {
+    //                 padding-bottom: 20px;
+    //             }
+    //             &-pagination {
+    //                 z-index: 100;
+    //                 bottom: 0px;
+    //             }
+    //         }
+    //     }
+    // }
 
     @include tablet {
-        &__item {
+        &__nav {
             flex-wrap: wrap;
-            &_left,
-            &_right {
+            gap: 5px 15px;
+        }
+        &__tab {
+            &_name {
+                font-size: 18px;
+            }
+            &_container {
+                font-size: 14px;
+            }
+        }
+        // &__item {
+        //     flex-wrap: wrap;
+        //     &_left,
+        //     &_right {
+        //         flex: 0 0 100%;
+        //         width: 100%;
+        //         max-width: 100%;
+        //     }
+        // }
+    }
+
+    @include mobile {
+        &__tab {
+            &_container {
+                flex-wrap: wrap;
+            }
+            &_content,
+            &_gallery {
                 flex: 0 0 100%;
                 width: 100%;
                 max-width: 100%;

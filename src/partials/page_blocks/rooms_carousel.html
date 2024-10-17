@@ -1,20 +1,34 @@
 <div class="rooms">
-    <div class="content-wrapper">
+    <div class="content-wrapper" data-tab-container>
         <h2>Гостиница «Тайга»</h2>
-        <div class="rooms__carousel_navigation_wrapper">
-            <div class="rooms__carousel_navigation">
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
+        <div class="rooms__nav">
+            {{#each rooms}}
+                <div class="rooms__tab_title {{#if is-active}}is-active{{/if}}" data-tab-target="room_{{index}}">{{name}}</div>
+            {{/each}}
         </div>
-        <div class="rooms__carousel">
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    {{#each rooms}}
-                        {{> rooms_carousel_item}}
-                    {{/each}}
+        {{#each rooms}}
+            <div class="rooms__tab_container" data-tab-content id="room_{{index}}">
+                <div class="rooms__tab_content">
+                    <p class="rooms__tab_name">{{name}}</p>
+                    <div class="rooms__tab_description">
+                        {{{description}}}
+                    </div>
+                </div>
+                <div class="rooms__tab_gallery">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            {{#each images}}
+                                <div class="swiper-slide rooms__tab_image">
+                                    <a href="{{image}}" data-fancybox="rooms">
+                                        <img src="{{image}}">
+                                    </a>
+                                </div>
+                            {{/each}}
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
                 </div>
             </div>
-        </div>
+        {{/each}}
     </div>
 </div>

@@ -144,19 +144,19 @@ const swiper_hotels_carousel = new Swiper('.hotels_block__carousel .swiper', {
   }
 });
 
-// Карусель с номерами
-const swiper_rooms_carousel = new Swiper('.rooms__carousel .swiper', {
-  slidesPerView: 1,
-  modules: [Navigation],
-  navigation: {
-    nextEl: '.rooms__carousel_navigation .swiper-button-next',
-    prevEl: '.rooms__carousel_navigation .swiper-button-prev',
-  },
-  allowTouchMove: false,
-});
+// // Карусель с номерами
+// const swiper_rooms_carousel = new Swiper('.rooms__carousel .swiper', {
+//   slidesPerView: 1,
+//   modules: [Navigation],
+//   navigation: {
+//     nextEl: '.rooms__carousel_navigation .swiper-button-next',
+//     prevEl: '.rooms__carousel_navigation .swiper-button-prev',
+//   },
+//   allowTouchMove: false,
+// });
 
 // Карусель с фотографиями номера
-const swiper_rooms_gallery_carousel = new Swiper('.rooms_gallery__carousel .swiper', {
+const swiper_rooms_gallery_carousel = new Swiper('.rooms__tab_gallery .swiper', {
   slidesPerView: 1,
   modules: [Pagination],
   pagination: {
