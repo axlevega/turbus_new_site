@@ -43,32 +43,16 @@
     &__links {
         display: flex;
         justify-content: center;
-        gap: 35px;
+        gap: 46px;
         margin-top: 30px;
         margin-bottom: 15px;
         &_item {
+            font-size: 18px;
             color: white;
-            position: relative;
-            padding-left: 18px;
-            &::before {
-                position: absolute;
-                content: '';
-                width: 12px;
-                height: 15px;
-                display: block;
-                background: url('../img/icons/ic_location_direct.svg') no-repeat center;
-                background-size: contain;
-                top: 50%;
-                left: 0;
-                transform: translateY(-50%);
-                filter: brightness(2) grayscale(1);
-            }
             &-active {
                 font-weight: 500;
                 text-decoration: underline;
-                &:before {
-                    filter: none;
-                }
+                color: #FFC978;
             }
             &:hover {
                 text-decoration: underline;
@@ -155,6 +139,14 @@
         &_description {
             font-size: 20px;
         }
+        &__links {
+            flex-wrap: wrap;
+            gap: 20px;
+            &_item {
+                font-size: 14px;
+
+            }
+        }
     }
 
     @include mobile {
@@ -182,6 +174,15 @@
             &_button {
                 width: 60px;
                 height: 28px;
+            }
+        }
+        &__links {
+            gap: 5px;
+            margin: 10px auto;
+            &_item {
+                font-size: 12px;
+                flex: 0 0 100%;
+                text-align: center;
             }
         }
     }
