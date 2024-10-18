@@ -4,9 +4,11 @@
     }
     &__nav {
         display: flex;
-        gap: 15px;
+        gap: 25px;
         margin-bottom: 20px;
-        overflow-x: scroll;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        @include scrollbar-gray;
     }
     &__tab {
         &_name {
