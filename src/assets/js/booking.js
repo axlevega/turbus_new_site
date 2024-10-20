@@ -183,10 +183,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 birth_date: document.getElementById('fld_birthdate').value,
                 phone: document.getElementById('fld_phone').value,
                 email: document.getElementById('fld_email').value,
-                // tour: document.getElementById('field_tour').value,
-                // hotel_info: document.getElementById('field_hotel').value,
-                tour: document.getElementById('field_tour').selectedOptions[0]?.text || '', // тащим в заявку текст, а не значение option
-                hotel_info: document.getElementById('field_hotel').selectedOptions[0]?.text || '', // тащим в заявку текст, а не значение option
+                direction: document.getElementById('field_direction').selectedOptions[0]?.text || '',
+                tour: document.getElementById('field_tour').selectedOptions[0]?.text || '',
+                hotel_info: document.getElementById('field_hotel').selectedOptions[0]?.text || '',
                 total_people: parseInt(document.getElementById('fld_count').value, 10),
                 payment_method: document.querySelector('input[name="payment"]:checked').value,
                 comment: document.getElementById('field_comment').value,
