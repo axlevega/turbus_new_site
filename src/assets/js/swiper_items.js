@@ -109,19 +109,11 @@ const swiper_reviews_carousel = new Swiper('.reviews_carousel .swiper', {
 // Карусель с автобусами
 const swiper_buses_carousel = new Swiper('.buses__carousel .swiper', {
   slidesPerView: 1,
-  modules: [Navigation, EffectCreative],
-  effect: "creative",
+  modules: [Navigation],
+  allowTouchMove: false,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
-  },
-  creativeEffect: {
-    prev: {
-      translate: [0, 0, -400],
-    },
-    next: {
-      translate: ["100%", 0, 0],
-    },
   }
 });
 
@@ -144,16 +136,15 @@ const swiper_hotels_carousel = new Swiper('.hotels_block__carousel .swiper', {
   }
 });
 
-// // Карусель с номерами
-// const swiper_rooms_carousel = new Swiper('.rooms__carousel .swiper', {
-//   slidesPerView: 1,
-//   modules: [Navigation],
-//   navigation: {
-//     nextEl: '.rooms__carousel_navigation .swiper-button-next',
-//     prevEl: '.rooms__carousel_navigation .swiper-button-prev',
-//   },
-//   allowTouchMove: false,
-// });
+// Карусель с фото автобусов
+const swiper_bus_gallery_carousel = new Swiper('.buses__item_gallery .swiper', {
+  slidesPerView: 1,
+  modules: [Pagination],
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  }
+});
 
 // Карусель с фотографиями номера
 const swiper_rooms_gallery_carousel = new Swiper('.rooms__tab_gallery .swiper', {

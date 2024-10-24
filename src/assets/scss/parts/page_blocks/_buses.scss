@@ -1,0 +1,207 @@
+.buses {
+    padding-top: 72px;
+    padding-bottom: 30px;
+    h2, .h2 {
+        text-align: center;
+        display: table;
+        margin: 0 auto 20px auto;
+    }
+    &-gray_bg {
+        background-color: #F8F8F8;
+    }
+    &__description {
+        columns: 3;
+        column-gap: 10vw;
+        text-align: justify;
+        p {
+            margin-bottom: 20px;
+        }
+    }
+    &__item {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 60px;
+        justify-content: space-between;
+        &_content {
+            flex: 0 0 calc(40% - 95px);
+            width: calc(40% - 95px);
+            max-width: calc(40% - 95px);
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            justify-content: center;
+            padding-left: 40px;
+            order: 1;
+        }
+        &_gallery {
+            flex: 0 0 calc(60% - 95px);
+            width: calc(60% - 95px);
+            max-width: calc(60% - 95px);
+            padding-right: 40px;
+            order: 2;
+        }
+        &_name {
+            font-size: 40px;
+            text-transform: uppercase;
+            line-height: 1;
+            font-family: var(--font-headers);
+            margin-bottom: 30px;
+        }
+        &_subtitle {
+            color: var(--color-main-blue);
+            font-family: var(--font-headers);
+            font-size: 30px;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+        &_tabs {
+            > div:first-of-type {
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                gap: 20px;
+                justify-content: space-between;
+            }
+            &_title {
+                font-size: 18px;
+                color: var(--color-main-blue);
+                cursor: pointer;
+                &.is-active {
+                    text-decoration: underline;
+                    font-weight: 500;
+                }
+            }
+            &_content {
+                display: none;
+                padding: 15px 0;
+                font-size: 18px;
+                p {
+                    margin-bottom: 15px;
+                }
+                &.is-active {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    @include notebook {
+        &__carousel {
+            &_navigation {
+                .swiper {
+                    &-button-prev {
+                        left: 0;
+                    }
+                    &-button-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+        &__item {
+            gap: 40px;
+            &_name {
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+            &_subtitle {
+                font-size: 22px;
+            }
+            &_tabs {
+                &_title {
+                    font-size: 16px;
+                }
+                &_content {
+                    padding: 12px 0;
+                    font-size: 14px;
+                }
+            }
+            &_content {
+                flex: 0 0 calc(50% - 65px);
+                width: calc(50% - 65px);
+                max-width: calc(50% - 65px);
+                padding-left: 40px;
+                gap: 25px;
+            }
+            &_gallery {
+                flex: 0 0 calc(50% - 65px);
+                width: calc(50% - 65px);
+                max-width: calc(50% - 65px);
+                padding-right: 40px;
+            }
+        }
+    }
+
+    @include smallDesktop {
+        &__item {
+            &_content {
+                flex: 0 0 calc(50% - 55px);
+                width: calc(50% - 55px);
+                max-width: calc(50% - 55px);
+                padding-left: 30px;
+            }
+            &_gallery {
+                flex: 0 0 calc(50% - 55px);
+                width: calc(50% - 55px);
+                max-width: calc(50% - 55px);
+                padding-right: 30px;
+            }
+        }
+    }
+
+    @include tablet {
+        &__carousel {
+            &_navigation {
+                &_wrapper {
+                    position: relative;
+                }
+                .swiper {
+                    &-button-prev {
+                        left: calc(50% - 40px);
+                        margin-top: -35px;
+                    }
+                    &-button-next {
+                        right: calc(50% - 40px);
+                        margin-top: -35px;
+                    }
+                }
+            }
+        }
+        &__item {
+            flex-wrap: wrap;
+            gap: 20px;
+            &_content,
+            &_gallery {
+                flex: 0 0 100%;
+                width: 100%;
+                max-width: 100%;
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+            &_content {
+                order: 2;
+            }
+            &_gallery {
+                order: 1;
+            }
+            &_tabs {
+                > div:first-of-type {
+                    justify-content: flex-start;
+                    gap: 30px;
+                }
+                &_content {
+                    padding-bottom: 30px;
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        &__item {
+            &_name {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
