@@ -107,7 +107,7 @@ const swiper_reviews_carousel = new Swiper('.reviews_carousel .swiper', {
 });
 
 // Карусель с автобусами
-const swiper_buses_carousel = new Swiper('.buses__carousel .swiper', {
+const swiper_buses_carousel = new Swiper('.buses__carousel > .swiper', {
   slidesPerView: 1,
   modules: [Navigation],
   allowTouchMove: false,
